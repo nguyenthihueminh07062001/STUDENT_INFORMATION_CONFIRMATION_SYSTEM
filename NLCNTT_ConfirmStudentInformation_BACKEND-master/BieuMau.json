@@ -1,0 +1,22 @@
+[
+    {
+        "MaBieuMau":"BM01",
+        "TenBieuMau":"Đăng ký tạm hoãn nghĩa vụ quân sự"
+    },
+    {
+        "MaBieuMau":"BM02",
+        "TenBieuMau":"Đăng ký tư vấn tâm lý sức khỏe cho sinh viên"
+    },
+    {
+        "MaBieuMau":"BM03",
+        "TenBieuMau":"Đăng ký nộp bản sao thẻ BHYT do địa phương cấp"
+    },
+    {
+        "MaBieuMau":"BM04",
+        "TenBieuMau":"Đăng ký điều chỉnh thông tin sinh viên online"
+    },
+    {
+        "MaBieuMau":"BM05",
+        "TenBieuMau":"Đăng ký giấy xác nhận thông tin sinh viên tại địa phương"
+    }
+]
