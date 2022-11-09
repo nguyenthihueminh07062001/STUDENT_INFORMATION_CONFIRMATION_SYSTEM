@@ -106,9 +106,13 @@ import HeaderAdmin from "../components/HeaderAdmin.vue";
 import ThongTinDangKyService from "../services/thongtindangky.service.js";
 import SidebarAdmin from "../components/SidebarAdmin.vue";
 export default {
+    components: {
+        SidebarAdmin,
+        HeaderAdmin,
+    },
     data() {
         return {
-            listThongTinDangKy: []
+            listThongTinDangKy: [],
         }
     },
     methods: {
@@ -126,10 +130,7 @@ export default {
     mounted() {
         this.retrieveContacts();
     },
-    components: {
-        SidebarAdmin,
-        HeaderAdmin,
-    },
+    
 }
 </script>
 

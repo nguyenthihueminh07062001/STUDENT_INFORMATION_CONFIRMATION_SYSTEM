@@ -4,8 +4,11 @@ class ThongTinDangKyService {
   extractDangKyMauData(payload) {
     const thongTinDangKy = {
       ngayDangKy: payload.NgayDangKy,
-      // ngayDuyet: payload.NgayDuyet,
-      // trangThaiPheDuyet: payload.TrangThaiPheDuyet,
+      ngayDuyet: payload.NgayDuyet,
+      trangThaiPheDuyet: payload.TrangThaiPheDuyet,
+      nguoiDuyet: payload.NguoiDuyet,
+      ghiChu: payload.GhiChu,
+      soLuotXacNhan:payload.SoLuotXacNhan,
     };
     // remove undifined filds
     Object.keys(thongTinDangKyu).forEach(

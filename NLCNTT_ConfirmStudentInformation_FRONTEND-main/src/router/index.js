@@ -21,6 +21,9 @@ import QuanLyTrangThai from "@/manager/quanLyTrangThai.vue";
 import QuanLyBieuMau from "@/manager/quanLyBieuMau.vue";
 //quan ly lich su
 import QuanLyLichSu from "@/manager/quanLyLichSu.vue";
+//dang ky xac nhan
+import DangKyXacNhan from "@/views/DangKyXacNhan.vue";
+
 
 
 //edit form
@@ -93,6 +96,12 @@ const routes = [
     path: "/xacNhanVayVon",
     name: "XNVV",
     component: XNVV,
+  },
+  //dang ky xac nhan
+  {
+    path: "/DangKyXacNhan",
+    name: "DangKyXacNhan",
+    component: DangKyXacNhan,
   },
   // admin
   {

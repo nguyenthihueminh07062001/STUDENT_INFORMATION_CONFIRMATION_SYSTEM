@@ -56,6 +56,7 @@ export default {
                                         <TH scope="col">Email</TH>
                                         <th scope="col">Ngày đăng ký</th>
                                         <th scope="col">Trạng thái</th>
+                                        <th scope="col">Tác vụ</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -67,6 +68,11 @@ export default {
                                         <td>{{ thongTinDangKy.thongTin.Email }}</td>
                                         <td>{{ thongTinDangKy.NgayDangKy }}</td>
                                         <td class="text-primary">{{ thongTinDangKy.thongTin.TrangThaiSinhVien }}</td>
+                                        <td class=""> 
+                                            <a href="" class=""><i class="fas fa-check text-success me-1 "></i></a>
+                                            <a href="" class="l"> <i class="fas fa-ban text-danger "></i>
+                                        </a>
+                                    </td>
                                     </tr>
 
 
