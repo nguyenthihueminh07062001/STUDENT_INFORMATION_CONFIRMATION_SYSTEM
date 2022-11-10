@@ -2,15 +2,18 @@
 import taiKhoanService from '../services/taiKhoan.service';
 import HeaderPublic from "../components/PublicHeader.vue";
 import PublicFooters from "../components/PublicFooters.vue";
+import { userAccStore } from "@/Store/userStore";
 
 export default {
     data() {
+        const userStore = userAccStore();
         return {
             taikhoan: {
                 tenTaiKhoan: "",
                 matKhau: ""
             },
             result: {},
+            userStore,
             error: false
         }
     },
@@ -18,13 +21,14 @@ export default {
         async login(data) {
             try {
                 this.result = await taiKhoanService.login(data);
+                this.userStore.user = this.result;
                 if (this.result.TenTaiKhoan) {
                     this.error = false
                     if (this.result.TenTaiKhoan == "admin") {
                         this.$router.push({ name: "ADMIN" });
                     }
 
-                    else { this.$router.push({ name: "Home" }); }
+                    else { this.$router.push({ name: "Forms" }); }
                 } else {
                     this.error = true
                 }
@@ -50,12 +54,12 @@ export default {
                     <div class="form-group   ">
                         <label for="mssv " class="">Tên Tài khoản:</label>
                         <input type="text" class="form-control" id="mssv " placeholder="Nhập vào tên tài khoản "
-                            required v-model="taikhoan.tenTaiKhoan">
+                            required v-model="this.taikhoan.tenTaiKhoan">
                     </div>
                     <div class="form-group  ">
                         <label for="pwd">Mật khẩu:</label>
                         <input type="password" class="form-control" id="pwd" placeholder="Nhập vào mật khẩu!"
-                            v-model="taikhoan.matKhau">
+                            v-model="this.taikhoan.matKhau">
                     </div>
                     <p v-if="error" class="text-danger">Tên tài khoản hoặc mật khẩu không đúng</p>
                     <div class="checkbox ">

@@ -15,6 +15,19 @@ exports.findAll = async (req, res, next) => {
 
   return res.send(documents);
 };
+exports.create = async (req, res, next) => {
+
+  try {
+    const thongTinDangKyService = new ThongTinDangKyService(MongoDB.client);
+    const documents = await thongTinDangKyService.create(req.body);
+    return res.send(documents);
+  } catch (error) {
+    return next(
+      new ApiError(500, "An error occurred while retrieving tt bieu mau")
+    );
+  }
+
+};
 
 exports.update = async (req, res, next) => {
   if (Object.keys(req.body).length === 0) {

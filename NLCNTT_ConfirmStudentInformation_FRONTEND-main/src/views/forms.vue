@@ -1,113 +1,39 @@
-<!-- <script>
-import HeaderPublic from "../components/PublicHeader.vue";
-import PublicFooters from "../components/PublicFooters.vue";
-import BieuMauService from "../services/bieuMau.service";
 
-export default {
-  data() {
-    return {
-      listBieuMau: []
-    }
-  },
-  methods: {
-
-    async retrieveContacts() {
-      try {
-        this.listBieuMau = await BieuMauService.getAll();
-      } catch (error) {
-        console.log(error);
-      }
-    },
-
-  },
-  mounted() {
-    this.retrieveContacts();
-  },
-  components: {
-    HeaderPublic, PublicFooters
-  }
-  
-}
-
-</script>
-<template>
-  <header-public/>
-
-  <div class="d-flex justify-content-center">
-
-    <div class="m-1 p-2">
-      <h3 class=" text-center mb-2">Một số biểu mẫu đăng ký</h3>
-      <ul class="loaiBieuMau">
-
-        <a href="#" class=" m-0">
-          <router-link class="nav-link text-primary" :to="{ name: 'THNVQS' }">Đăng ký Giấy tạm hoãn nghĩa vụ quân sự
-          </router-link>
-        </a>
-        <a href="#" class=" m-0">
-          <router-link class="nav-link text-primary" :to="{ name: 'TVTL' }">Đăng ký tư vấn tâm lý, sức khỏe cho HSSV
-          </router-link>
-        </a>
-        <a href="#" class=" m-0">
-          <router-link class="nav-link text-primary" :to="{ name: 'BHYT' }">Đăng ký nộp bản sao thẻ BHYT do địa phương
-            cấp
-            (không mua BHYT tại Trường)</router-link>
-        </a>
-        <a href="#" class=" m-0">
-          <router-link class="nav-link text-primary" :to="{ name: 'DCTT' }">Đăng ký điều chỉnh thông tin sinh viên
-            Online
-          </router-link>
-        </a>
-        <a href="#" class=" m-0">
-          <router-link class="nav-link text-primary" :to="{ name: 'XNVV' }">Đăng ký Giấy xác nhận vay vốn tại địa phương
-            (Theo Cá nhân)
-          </router-link>
-        </a>
-
-      </ul>
-
-    </div>
-  </div>
-  <public-footers/>
-
-</template>
-
-<style>
-.loaiBieuMau {
-  font-style: italic;
-  text-decoration: none;
-  list-style: none;
-  font-weight: 100;
-  border: double blue;
-  padding-bottom: 5%;
-  margin-top: 0;
-}
-</style> -->
 
 <script>
 import HeaderPublic from "../components/PublicHeader.vue";
 import PublicFooters from "../components/PublicFooters.vue";
-// import BieuMauService from "../services/bieuMau.service";
+import BieuMauService from "../services/bieuMau.service";
 import ThongTinDangKyService from "../services/thongtindangky.service.js";
+import { userAccStore } from "@/Store/userStore";
 
 export default {
   components: {
     HeaderPublic,
     PublicFooters,
+    BieuMauService,
+  },
+  props: {
+    bieuMau: { type: Object, required: true },
   },
   data() {
+    const taikhoan = userAccStore();
+
     return {
-      // bieuMauLocal: this.bieuMau,
       listThongTinDangKy: [],
       bieuMau: [],
+      taikhoan
+
     }
   },
+  
 
   methods: {
 
     async retrieveContacts() {
       try {
         this.listThongTinDangKy = await ThongTinDangKyService.getAll();
-        console.log(this.listThongTinDangKy);
+        this.listThongTinDangKy = this.listThongTinDangKy.filter((e) => e.MSSV == this.taikhoan.user.TenTaiKhoan)
       } catch (error) {
         console.log(error);
       }
@@ -127,10 +53,7 @@ export default {
     <div class="d-flex justify-content-center container ">
 
       <div class="m-1 p-2">
-        <!-- <h3 class=" text-center mb-2  ">Một số biểu mẫu đăng ký</h3> -->
         <table class="table table-hover text-center border border-primary  ">
-
-          <!-- <table class="table table-hover text-center table-bordered  col-lg-6"> -->
           <thead class=" ">
             <tr class="text-light bg-form">
               <th colspan="6 ">
@@ -144,8 +67,15 @@ export default {
                 Tên mẫu xác nhận:
                 <select id="" name="">
                   <option value="tatca">Tất cả</option>
-                  <option value="vayvon">1 - Đơn yêu cầu xác nhận vay vốn</option>
-                  <option value="quansu">2 - Đơn yêu cầu hoãn nghĩa vụ quân sự </option>
+                  <option value="quansu">1 - Đơn yêu cầu hoãn nghĩa vụ quân sự </option>
+                  <option>2 - Đăng ký tư vấn tâm lý sức khỏe cho sinh viên</option>
+                  <option>3 - Đăng ký nộp bản sao thẻ BHYT do địa phương cấp</option>
+                  <option>4 - Đăng ký điều chỉnh thông tin sinh viên online</option>
+                  <option value="vayvon">5 - Đơn yêu cầu xác nhận vay vốn</option>
+
+
+
+
                 </select>
               </td>
               <td colspan="3">
@@ -181,42 +111,38 @@ export default {
               <td class="text-primary">{{ thongTinDangKy.TrangThaiPheDuyet }}</td>
               <td>{{ thongTinDangKy.GhiChu }}</td>
               <td> </td>
-
-
-
             </tr>
-
           </tbody>
+         
+
         </table>
         <div class="text-center">
           <h6 class="text-left"> <b> Ghi chú:</b></h6>
-          <textarea rows="3"
-            cols="90" class="px-2">- Sinh viên đăng ký giấy xác nhận chờ nhận email phản hồi sau 02 ngày kể từ ngày đăng ký - trừ thứ 7, chủ nhật và ngày nghỉ lễ.</textarea>
+          <textarea rows="3" cols="90"
+            class="px-2">- Sinh viên đăng ký giấy xác nhận chờ nhận email phản hồi sau 02 ngày kể từ ngày đăng ký - trừ thứ 7, chủ nhật và ngày nghỉ lễ.</textarea>
 
         </div>
         <div class="text-center">
-          <a class="btn btn-primary text-light" href="#" role="button"><router-link class="" :to="{ name: 'DangKyXacNhan' }">Đăng ký
-          </router-link></a>
-          
-          <a class="btn btn-primary" href="#" role="button">Xóa</a>
-          
-          <!-- <a  class="btn btn-primary text-center">
-            <router-link class="" :to="{ name: 'DCTT' }">Trang chủ
+          <!-- <a class="btn btn-primary text-light" role="button">
+            <router-link class=" text-light" :to="{ name: 'DangKyXacNhan' }">Đăng ký
             </router-link>
           </a> -->
-          <!-- <button class="btn-primary text-light">Xóa</button> -->
+
+          <router-link class=" btn btn-primary text-light" :to="{ name: 'DangKyXacNhan' }">Đăng ký
+          </router-link>
+          <a class="btn btn-primary" href="#" role="button">Xóa</a>
         </div>
 
 
       </div>
-      
+
 
 
 
 
     </div>
-   
-   
+
+
 
   </main>
 
@@ -252,7 +178,8 @@ export default {
 .table tbody tr td {
   border: 1px solid #19a7ff;
 }
-.bg-form{
-  background-color: #191775;
+
+.bg-form {
+  background-color: #3456b4;
 }
 </style>

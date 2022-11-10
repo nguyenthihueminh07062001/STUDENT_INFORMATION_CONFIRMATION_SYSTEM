@@ -7,7 +7,7 @@
         "NguoiDuyet":"admin",
         "TrangThaiPheDuyet":"Chờ xác nhận",
         "GhiChu":"",
-        "SoLuotXacNhan":"1"
+        "SoLuong":""
        
     },
     {
@@ -18,7 +18,7 @@
         "NguoiDuyet":"admin",
         "TrangThaiPheDuyet":"Chờ xác nhận",
         "GhiChu":"",
-        "SoLuotXacNhan":"1"
+        "SoLuong":""
     },
     {
         "MSSV":"B1910402",
@@ -28,7 +28,7 @@
         "NguoiDuyet":"admin",
         "TrangThaiPheDuyet":"Chờ xác nhận",
         "GhiChu":"",
-        "SoLuotXacNhan":"1"
+        "SoLuong":""
     },
     {
         "MSSV":"B1910468",
@@ -38,7 +38,7 @@
         "NguoiDuyet":"admin",
         "TrangThaiPheDuyet":"Chờ xác nhận",
         "GhiChu":"",
-        "SoLuotXacNhan":"1"
+        "SoLuong":""
     },
     {
         "MSSV":"B1910317",
@@ -48,7 +48,7 @@
         "NguoiDuyet":"admin",
         "TrangThaiPheDuyet":"Chờ xác nhận",
         "GhiChu":"",
-        "SoLuotXacNhan":"1"
+        "SoLuong":""
     },
     {
         "MSSV":"B1910418",
@@ -58,7 +58,7 @@
         "NguoiDuyet":"admin",
         "TrangThaiPheDuyet":"Chờ xác nhận",
         "GhiChu":"",
-        "SoLuotXacNhan":"1"
+        "SoLuong":""
     },
     {
         "MSSV":"B1912156",
@@ -68,16 +68,16 @@
         "NguoiDuyet":"admin",
         "TrangThaiPheDuyet":"Chờ xác nhận",
         "GhiChu":"",
-        "SoLuotXacNhan":"1"
+        "SoLuong":""
     },
     {
-        "MSSV":"B1912BM01150",
+        "MSSV":"B1912150",
         "MaBieuMau":"",
         "NgayDangKy":"10/10/2022",
         "NgayDuyet":"6/11/2022",
         "NguoiDuyet":"admin",
         "TrangThaiPheDuyet":"Chờ xác nhận",
         "GhiChu":"",
-        "SoLuotXacNhan":"1"
+        "SoLuong":""
     }
 ]

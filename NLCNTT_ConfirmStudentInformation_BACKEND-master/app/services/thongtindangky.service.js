@@ -1,17 +1,18 @@
 const { ObjectId } = require("mongodb");
 
 class ThongTinDangKyService {
-  extractDangKyMauData(payload) {
+  extractThongTinDangKyData(payload) {
     const thongTinDangKy = {
-      ngayDangKy: payload.NgayDangKy,
-      ngayDuyet: payload.NgayDuyet,
-      trangThaiPheDuyet: payload.TrangThaiPheDuyet,
-      nguoiDuyet: payload.NguoiDuyet,
-      ghiChu: payload.GhiChu,
-      soLuotXacNhan:payload.SoLuotXacNhan,
+      MSSV: payload.MSSV,
+      MaBieuMau: payload.MaBieuMau,
+      NgayDangKy: payload.NgayDangKy,
+      NgayDuyet: payload.NgayDuyet ?? null,
+      TrangThaiPheDuyet: payload.TrangThaiPheDuyet ?? "Chờ xác nhận",
+      NguoiDuyet: payload.NguoiDuyet ?? null,
+      GhiChu: payload.GhiChu,
     };
     // remove undifined filds
-    Object.keys(thongTinDangKyu).forEach(
+    Object.keys(thongTinDangKy).forEach(
       (key) => thongTinDangKy[key] === undefined && delete thongTinDangKy[key]
     );
     return thongTinDangKy;
@@ -76,17 +77,26 @@ class ThongTinDangKyService {
   //     });
   // }
 
-  async update(id, payload) {
+  async create(payload) {
     console.log(payload);
+    const data = this.extractThongTinDangKyData(payload);
+    console.log(data);
+    const result = await this.ThongTinDangKy.insertOne(data);
+    return result.value;
+  }
+  async update(id, payload) {
+    console.log(id);
     const filter = {
       _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
     };
+    console.log(id);
     const update = this.extractThongTinDangKyData(payload);
     const result = await this.ThongTinDangKy.findOneAndUpdate(
       filter,
       { $set: update },
       { returnDocument: "after" }
     );
+    console.log(result.value);
     return result.value;
   }
 

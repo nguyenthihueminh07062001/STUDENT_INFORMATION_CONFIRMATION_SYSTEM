@@ -2,6 +2,7 @@
 <script>
 import InputSearch from '../components/InputSearch.vue'
 import BieuMauService from '../services/bieuMau.service'
+import { userAccStore } from "@/Store/userStore";
 export default {
     components: {
         InputSearch,
@@ -49,7 +50,16 @@ export default {
             return this.filteredBieuMau.length;
         },
     },
+    setup() {
+        const taikhoan = userAccStore();
+        return { taikhoan };
+    },
     methods: {
+        logout() {
+            this.taikhoan.user = {};
+            // this.$route.push({ name: "login" });
+            this.$router.push({ name: "Login" });
+        },
         async retrieveBieuMau() {
             try {
                 this.bieuMau = await BieuMauService.getAll();
@@ -70,35 +80,61 @@ export default {
 <template>
 
     <header>
-        <div>
+        <!-- <div>
             <div class="pre-nav row text-center pre-nav m-0 " style="padding-top: 15px;">
                 <div class="col-4">
 
                 </div>
                 <InputSearch v-model="searchText" />
-                <!-- input search -->
-                <!-- <div class="col-5 d-flex justify-content-center input-search">
-                    <label class="">
-                        <input class="form-control " type="search" placeholder="Search" aria-label="Search" value=""
-                            name="search_admin">
-                    </label>
-                
-                </div> -->
-                <div class="col-3 d-flex justify-content-end pe-5 pt-6">
+                <div class="pre-nav row text-center pre-nav m-0 " >
+                    <p class="col-6 row"></p>
+                    <div class="row col-3 d-flex justify-content-end pe-5 pt-6">
 
-                    <div class="">
+                        <div v-if="taikhoan.user.TenTaiKhoan == null" class="">
+                            <div class=" justify-content-end">
+
+                                <router-link class="nav-link text-dark" :to="{ name: 'Login' }">Đăng nhập</router-link>
+
+                            </div>
+                        </div>
+                        <div v-else class="user-login ">
+                            <div class="row ">
+                                <a class="col-3user-icon"><i class="fas fa-user text-dark "></i></a>
+                                <span class="col-3 "><b>{{ taikhoan.user.TenTaiKhoan }}</b>
+                                    </span>
+                                    <a @click="logout()"><i
+                                            class=" fa-solid fa-right-from-bracket text-danger"
+                                            style="cursor: pointer"></i></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div>
+            <div class="pre-nav row text-center pre-nav m-0 " style="padding-top: 15px;">
+                <div class="col-3">
+
+                </div>
+                <p class="col-6 row"></p>
+                <div class="row col-3 d-flex justify-content-end pe-5 pt-6">
+
+                    <div v-if="taikhoan.user.TenTaiKhoan == null" class="col">
                         <div class=" justify-content-end">
 
                             <router-link class="nav-link text-dark" :to="{ name: 'Login' }">Đăng nhập</router-link>
 
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-5 col-lg-3 user-login">
-                        <div class="">
-                            <a class="user-icon " href="/login"><i class="  fas fa-user text-dark ">
-                                    <router-link class="nav-link text-dark decorate" :to="{ name: 'Home' }">
-                                    </router-link>
-                                </i></a>
+                    <div v-else class="user-login ">
+                        <div class="row ">
+                            <a class="user-icon"><i class="fas fa-user text-dark "></i></a>
+                            <span class="">{{ taikhoan.user.TenTaiKhoan }}<a @click="logout()"><i
+                                        class=" fa-solid fa-right-from-bracket text-danger"
+                                        style="cursor: pointer"></i></a></span>
+
                         </div>
 
                     </div>
@@ -111,29 +147,5 @@ export default {
 
         </div>
     </header>
-
-
-
-
-    <!--  -->
-    <!-- <nav class="navbar shadow  bg-white ">
-    <div class="container-fluid navbar">
-        <div class="justify">
-            <i class="fas fa-align-justify"></i>
-        </div>
-        <form role="search" method="
-        " class="search-form justify-content-end" action="/search_admin"
-            name="search-form">
-            <label>
-                <input class="form-control justify-content-en" type="search" placeholder="Search" aria-label="Search"
-                    value="" name="search_admin">
-            </label>
-        </form>
-        <div class="icon-menu">
-            <i class="far fa-bell"></i>
-            <a href="/logout"><i class="fas fa-sign-out-alt text-danger ml-2"></i></a>
-        </div>
-    </div>
-</nav> -->
 </template>
 

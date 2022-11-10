@@ -1,77 +1,100 @@
+
+
+<script>
+import { userAccStore } from "@/Store/userStore";
+
+export default {
+    setup() {
+        const taikhoan = userAccStore();
+        return { taikhoan };
+    },
+    methods: {
+        logout() {
+            this.taikhoan.user = {};
+            this.$router.push({ name: "Login" });
+        }
+    }
+};
+</script>
+
+
 <template>
-<!-- ////// -->
-<header>
-    <div>
-        <div class="pre-nav row text-center pre-nav m-0 " style="padding-top: 15px;">
-            <div class="col-3">
-
-            </div>
-            <p class="col-6 row"></p>
-            <div class="col-3 d-flex justify-content-end pe-5 pt-6">
-
-                <div class="">
-                    <div class=" justify-content-end">
-
-                        <router-link class="nav-link text-dark" :to="{ name: 'Login' }">Đăng nhập</router-link>
-
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-5 col-lg-3 user-login">
-                    <div class="">
-                        <a class="user-icon " href="/login"><i class="  fas fa-user text-dark"></i></a>
-                    </div>
+    <header>
+        <div>
+            <div class="pre-nav row text-center pre-nav m-0 " style="padding-top: 15px;">
+                <div class="col-3">
 
                 </div>
+                <p class="col-6 row"></p>
+                <div class="row col-3 d-flex justify-content-end pe-5 pt-6">
 
+                    <div v-if="taikhoan.user.TenTaiKhoan == null" class="col">
+                        <div class=" justify-content-end">
+
+                            <router-link class="nav-link text-dark" :to="{ name: 'Login' }">Đăng nhập</router-link>
+
+                        </div>
+                    </div>
+                    <div v-else class="user-login ">
+                        <div class="row ">
+                            <a class="user-icon"><i class="fas fa-user text-dark "></i></a>
+                            <span class="">{{ taikhoan.user.TenTaiKhoan }}<a @click="logout()"><i class=" fa-solid fa-right-from-bracket text-danger" style="cursor: pointer"></i></a></span>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="navbar navbar-expand-lg navbar-dark  row   " aria-label="Eighth navbar example">
+        <div class="navbar navbar-expand-lg navbar-dark  row   " aria-label="Eighth navbar example">
 
-    </div>
+        </div>
 
-    <div class="bg-header">
-        <router-link :to="{ name: 'Home' }">
-            <img src="../assets/images/PhongCongTacSinhVien.png" height="" class="img-fluid mx-auto d-block " alt="">
+        <div class="bg-header">
+            <router-link :to="{ name: 'Home' }">
+                <img src="../assets/images/PhongCongTacSinhVien.png" height="" class="img-fluid mx-auto d-block "
+                    alt="">
 
-        </router-link>
+            </router-link>
 
-    </div>
+        </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-light ftco-navbar-light" id="ftco-navbar">
-        <div class="container-fluid t">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-light ftco-navbar-light" id="ftco-navbar">
+            <div class="container-fluid t">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa fa-bars"></span> Menu
-            </button>
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav m-auto">
-                    <li class="nav-item active"><a href="#" class="">
-                            <router-link class="nav-link text-dark decorate" :to="{ name: 'Home' }">Trang chủ
-                            </router-link>
-                        </a></li>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                    aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span> Menu
+                </button>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item active"><a href="#" class="">
+                                <router-link class="nav-link text-dark decorate" :to="{ name: 'Home' }">Trang chủ
+                                </router-link>
+                            </a></li>
 
-                    <li class="nav-item"><a href="#">
-                            <router-link class="nav-link text-dark" :to="{ name: 'Intro' }">Giới thiệu</router-link>
-                        </a></li>
-                    <li class="nav-item"><a href="#">
-                            <router-link class="nav-link text-dark" :to="{ name: 'Notify' }">Thông báo</router-link>
-                        </a></li>
-                    <li class="nav-item active"><a href="#" class="">
-                            <router-link class="nav-link text-dark" :to="{ name: 'Forms' }">Biểu mẫu</router-link>
-                        </a></li>
-                    
+                        <li class="nav-item"><a href="#">
+                                <router-link class="nav-link text-dark" :to="{ name: 'Intro' }">Giới thiệu</router-link>
+                            </a></li>
+                        <li class="nav-item"><a href="#">
+                                <router-link class="nav-link text-dark" :to="{ name: 'Notify' }">Thông báo</router-link>
+                            </a></li>
+                        <li class="nav-item active"><a href="#" class="">
+                                <router-link class="nav-link text-dark" :to="{ name: 'Forms' }">Biểu mẫu</router-link>
+                            </a></li>
 
-                    <!-- <li class="nav-item active"><a href="#" class="">
+
+                        <!-- <li class="nav-item active"><a href="#" class="">
                             <router-link class="nav-link text-dark" :to="{ name: 'Login' }">Đăng nhập</router-link>
                         </a>
                     </li> -->
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 </template>
 
 <style>
@@ -134,12 +157,3 @@ a:hover {
 }
 </style>
 
-<script>
-//   export default{
-//     methods: {
-//       goDetails(){
-//         this.$router.push('/user')
-//     }
-//   }
-// }
-</script>

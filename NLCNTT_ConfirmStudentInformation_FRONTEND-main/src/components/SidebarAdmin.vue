@@ -86,7 +86,7 @@
 .sidebars {
     position: sticky;
     background-color: rgb(25, 36, 66);
-    height: 800px;
+    height: 1800px;
 }
 
 .sidebars a {

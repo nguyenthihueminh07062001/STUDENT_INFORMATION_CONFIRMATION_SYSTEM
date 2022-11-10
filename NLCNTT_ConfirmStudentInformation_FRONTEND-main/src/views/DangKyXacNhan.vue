@@ -86,58 +86,91 @@ export default {
 <script>
 import HeaderPublic from "../components/PublicHeader.vue";
 import PublicFooters from "../components/PublicFooters.vue";
-// import BieuMauService from "../services/bieuMau.service";
+import BieuMauService from "../services/bieuMau.service";
 import ThongTinDangKyService from "../services/thongtindangky.service.js";
+import { userAccStore } from "@/Store/userStore";
 
 export default {
-    components: {
-        HeaderPublic,
-        PublicFooters,
+  components: {
+    HeaderPublic,
+    PublicFooters,
+    BieuMauService,
+  },
+  data() {
+    const taikhoan = userAccStore();
+
+    return {
+      // bieuMauLocal: this.bieuMau,
+      listThongTinDangKy: [],
+      bieuMau: [],
+      data: {
+
+      },
+      taikhoan
+    }
+  },
+
+  methods: {
+
+    async retrieveBieuMau() {
+      try {
+        this.bieuMau = await BieuMauService.getAll();
+      } catch (error) {
+        console.log(error);
+      }
     },
-    data() {
-        return {
-            // bieuMauLocal: this.bieuMau,
-            listThongTinDangKy: [],
-            bieuMau: [],
-        }
+    async handleSubmit() {
+      this.data.MSSV = this.taikhoan.user.TenTaiKhoan
+      this.data.NgayDangKy = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" });
+      const rs = await ThongTinDangKyService.create(this.data);
+      this.$router.push("/forms");
+
     },
 
-    methods: {
-
-        async retrieveContacts() {
-            try {
-                this.listThongTinDangKy = await ThongTinDangKyService.getAll();
-                console.log(this.listThongTinDangKy);
-            } catch (error) {
-                console.log(error);
-            }
-        },
-
+  },
+  computed: {
+    // chuyen cac doi tuong contact thanh chuoi de tien cho tiem kiem
+    bieuMauStrings() {
+      return this.bieuMau.map((bieuMau) => {
+        const {
+          MaBieuMau,
+          TenBieuMau,
+        } = bieuMau;
+        return [MaBieuMau, TenBieuMau,].join("");
+      });
     },
-    mounted() {
-        this.retrieveContacts();
+
+    // tra ve cac contact co chua thong tin can tim kiem
+
+    activeBieuMau() {
+      if (this.activeIndex < 0) return null;
+      return this.filteredBieuMau[this.activeIndex];
     },
+  },
+  created() {
+    this.retrieveBieuMau();
+  },
 
 }
 
 </script>
 <template>
-    <header-public />
-    <main>
-        <div class="d-flex justify-content-center container ">
+  <header-public />
+  <main>
+    <div class="d-flex justify-content-center container ">
 
-            <div class="m-1 p-2">
-                <!-- <h3 class=" text-center mb-2  ">Một số biểu mẫu đăng ký</h3> -->
-                <table class="table table-hover text-center border border-primary  ">
+      <div class="m-1 p-2">
+        <!-- <h3 class=" text-center mb-2  ">Một số biểu mẫu đăng ký</h3> -->
+        <table class="table table-hover text-center border border-primary  ">
 
-                    <!-- <table class="table table-hover text-center table-bordered  col-lg-6"> -->
-                    <thead class=" ">
-                        <tr class="text-light bg-form">
-                            <th colspan="6 ">
-                                Đăng ký xác nhận
-                            </th>
-                        </tr>
-                        <!-- <tr class="text-dark use-color">
+          <!-- <table class="table table-hover text-center table-bordered  col-lg-6"> -->
+          <thead class=" ">
+            <tr class="text-light bg-form">
+              <th colspan="6 ">
+                Đăng ký xác nhận
+              </th>
+            </tr>
+            <!-- <tr class="text-dark use-color">
 
                             <td colspan="">
 
@@ -159,7 +192,7 @@ export default {
                             </td>
 
                         </tr> -->
-                        <!-- <tr class="  text-dark  use-color ">
+            <!-- <tr class="  text-dark  use-color ">
 
                             <th scope="col ">STT</th>
                             <th scope="col">Tên mẫu xác nhận</th>
@@ -172,81 +205,99 @@ export default {
 
                             </th>
                         </tr> -->
-                    </thead>
-                    <tbody class="text-left">
-                        <tr>
-                            <td colspan="6" class="text-center">
+          </thead>
+          <tbody class="text-left">
+            <tr>
+              <!-- <td colspan="6" class="text-center">
 
                                 Tên mẫu xác nhận:
                                 <select id="" name="">
-                                    <option value="vayvon">1 - Đơn yêu cầu xác nhận vay vốn</option>
-                                    <option value="quansu">2 - Đơn yêu cầu hoãn nghĩa vụ quân sự </option>
+                                    <option value="">1 - Đơn yêu cầu xác nhận vay vốn</option>
+                                    <option value="">2 - Đơn yêu cầu hoãn nghĩa vụ quân sự </option>
+                                    
                                 </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="6" class="text-center">
-                                <div class="text-center">
-                                    <h6 class="text-left"> <b> Ghi chú:</b></h6>
-                                    <textarea class="px-2" rows="3" cols="70"></textarea>
+                            </td> -->
+              <td colspan="6" class="text-center">
 
-                                </div>
-                            </td>
+                Tên mẫu xác nhận:
+                <select v-model="this.data.MaBieuMau">
+                  <option v-for="(bieuMau, index) in this.bieuMau" :value="bieuMau.MaBieuMau">{{ index + 1 }} - {{
+                      bieuMau.TenBieuMau
+                  }}</option>
 
-                        </tr>
-                        <tr>
-                            <td colspan="6" class="text-center">
-                                <div class="">
-                                    <button class="btn-primary text-light">Thêm</button>
-                                    <button class="btn-primary text-light">Trở về</button>
-                                </div>
-                            </td>
-                        
-                        </tr>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6" class="text-center">
+                <div class="text-center">
+                  <h6 class="text-left"> <b> Ghi chú:</b></h6>
+                  <textarea class="px-2" rows="3" cols="70" v-model="this.data.GhiChu"></textarea>
 
-                    </tbody>
-                </table>
+                </div>
+              </td>
+
+            </tr>
+            <tr>
+              <td colspan="6" class="text-center">
+                <div class="">
+                  <a class="btn btn-primary text-light" role="button" @click="handleSubmit">
+                    Thêm
+
+                  </a>
+
+                  <a class="btn btn-primary text-light" href="#" role="button">
+                    <router-link class=" text-light" :to="{ name: 'Forms' }">Hủy
+                    </router-link>
+                  </a>
+                </div>
+              </td>
+
+            </tr>
+
+          </tbody>
+        </table>
 
 
 
-            </div>
-            
+      </div>
 
 
 
 
-        </div>
 
-    </main>
+    </div>
 
-    <public-footers />
+  </main>
+
+  <public-footers />
 
 </template>
 
 <style scoped>
 .loaiBieuMau {
-    font-style: italic;
-    text-decoration: none;
-    list-style: none;
-    font-weight: 100;
-    border: double blue;
-    padding-bottom: 5%;
-    margin-top: 0;
+  font-style: italic;
+  text-decoration: none;
+  list-style: none;
+  font-weight: 100;
+  border: double blue;
+  padding-bottom: 5%;
+  margin-top: 0;
 }
 
 .use-color {
-    background-color: #DAE9F3;
+  background-color: #DAE9F3;
 
 }
 
 .button-1 {
-    background-color: #3872B2;
-    border: 1px solid #80B5D7;
+  background-color: #3872B2;
+  border: 1px solid #80B5D7;
 }
 
 
 
 .bg-form {
-    background-color: #191775;
+  background-color: #3456b4;
 }
 </style>
