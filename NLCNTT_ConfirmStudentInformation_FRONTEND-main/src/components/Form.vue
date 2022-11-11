@@ -18,7 +18,7 @@ export default {
         bieuMau: { type: Object, required: true },
     },
 
-    
+
     data() {
         const FormSchema = yup.object().shape({
             MabieuMau: yup
@@ -51,47 +51,58 @@ export default {
 };
 </script>
 <template>
+    <!-- <main>
     <HeaderAdmin />
-    <div class="container  ">
+    <div class="container  "> -->
+
+    <Form @submit="submitBieuMau" :validation-schema="FormSchema">
         <div class="row justify-content-center ">
-            <div class="  col-lg-5 m-2  rounded container-frame ">
-                    <Form @submit="submitBieuMau" :validation-schema="FormSchema">
-                        <!-- <h4 class="text-center mb-2">Hiệu chỉnh biểu mẫu</h4> -->
-                        <div class="form-group">
-                            <label for="maBieuMau">Mã biểu mẫu</label>
-                            <Field name="maBieuMau" type="text" class="form-control" v-model="this.bieuMauLocal.MaBieuMau" />
-                            <ErrorMessage  name="maBieuMau" class="error-feedback text center" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Tên biểu mẫu</label>
-                            <Field name="name" type="" class="form-control" v-model="this.bieuMauLocal.TenBieuMau" />
-                            <ErrorMessage name="name" class="error-feedback text-center" />
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary text-light" @click="submitBieuMau">
-                                <i class="fas fa-save "></i> Lưu
-                            </button>
-                          
-                            <button v-if="this.bieuMauLocal._id" type="button" class="ml-2 btn btn-danger  text-light" @click="deleteBieuMau">
-                                <i class="fas fa-trash"></i>
-                                Xóa
-                            </button>
-                        </div>
-                    </Form>
-    
+            <div class="  p-2  rounded container-frame  col-md-6   mb-2  rounded ">
+                <!-- <h4 class="text-center mb-2">Hiệu chỉnh biểu mẫu</h4> -->
+                <div class="form-group form-group-details">
+                    <label for="maBieuMau">Mã biểu mẫu</label>
+                    <Field name="maBieuMau" type="text" class="form-control 
+                    " v-model="this.bieuMauLocal.MaBieuMau" />
+                    <ErrorMessage name="maBieuMau" class="error-feedback text center" />
+                </div>
+                <div class="form-group form-group-details">
+                    <label for="name">Tên biểu mẫu</label>
+                    <Field name="name" type="" class="form-control" v-model="this.bieuMauLocal.TenBieuMau" />
+                    <ErrorMessage name="name" class="error-feedback text-center" />
+                </div>
+                <div class="form-group form-group-details">
+                    <button class="btn btn-primary text-light" @click="submitBieuMau">
+                        <i class="fas fa-save "></i> Lưu
+                    </button>
+
+                    <button v-if="this.bieuMauLocal._id" type="button" class="ml-2 btn btn-danger  text-light"
+                        @click="deleteBieuMau">
+                        <i class="fas fa-trash"></i>
+                        Xóa
+                    </button>
+                </div>
             </div>
-    
+
         </div>
-    
-    </div>
-    
+    </Form>
+
+
+
+    <!-- </div>
+    </main> -->
+
 </template>
 <style>
-Form{
-    margin: 10%;
+.container-frame {
+    box-shadow: 8px 5px 5px 5px #888888;
+    margin-top: 7%;
+
 }
-.container-frame{
-    background-color: rgb(214, 219, 234);
+
+.form-group-details {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
 }
 </style>
 
