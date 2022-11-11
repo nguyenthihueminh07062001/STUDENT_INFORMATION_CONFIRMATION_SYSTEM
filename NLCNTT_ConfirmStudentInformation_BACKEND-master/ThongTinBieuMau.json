@@ -1,75 +1,12 @@
 [
     {
-        "MSSV":"B1910411",
-        "MaBieuMau":"BM02",
-        "NgayDangKy":"10/10/2022",
-        "NgayDuyet":"6/11/2022",
-        "NguoiDuyet":"admin",
-        "TrangThaiPheDuyet":"Chờ xác nhận",
-        "SoLuotXacNhan":"1"
+        "MSSV":"",
+        "MaBieuMau":"",
+        "NgayDangKy":"",
+        "NgayDuyet":"",
+        "NguoiDuyet":"",
+        "TrangThaiPheDuyet":"",
+        "SoLuotXacNhan":""
        
-    },
-    {
-        "MSSV":"B1910408",
-        "MaBieuMau":"BM03",
-        "NgayDangKy":"10/10/2022",
-        "NgayDuyet":"6/11/2022",
-        "NguoiDuyet":"admin",
-        "TrangThaiPheDuyet":"Chờ xác nhận",
-        "SoLuotXacNhan":"1"
-    },
-    {
-        "MSSV":"B1910402",
-        "MaBieuMau":"BM04",
-        "NgayDangKy":"10/10/2022",
-        "NgayDuyet":"6/11/2022",
-        "NguoiDuyet":"admin",
-        "TrangThaiPheDuyet":"Chờ xác nhận",
-        "SoLuotXacNhan":"1"
-    },
-    {
-        "MSSV":"B1910468",
-        "MaBieuMau":"BM05",
-        "NgayDangKy":"10/10/2022",
-        "NgayDuyet":"6/11/2022",
-        "NguoiDuyet":"admin",
-        "TrangThaiPheDuyet":"Chờ xác nhận",
-        "SoLuotXacNhan":"1"
-    },
-    {
-        "MSSV":"B1910317",
-        "MaBieuMau":"BM02",
-        "NgayDangKy":"10/10/2022",
-        "NgayDuyet":"6/11/2022",
-        "NguoiDuyet":"admin",
-        "TrangThaiPheDuyet":"Chờ xác nhận",
-        "SoLuotXacNhan":"1"
-    },
-    {
-        "MSSV":"B1910418",
-        "MaBieuMau":"",
-        "NgayDangKy":"10/10/2022",
-        "NgayDuyet":"6/11/2022",
-        "NguoiDuyet":"admin",
-        "TrangThaiPheDuyet":"Chờ xác nhận",
-        "SoLuotXacNhan":"1"
-    },
-    {
-        "MSSV":"B1912156",
-        "MaBieuMau":"BM01",
-        "NgayDangKy":"10/10/2022",
-        "NgayDuyet":"6/11/2022",
-        "NguoiDuyet":"admin",
-        "TrangThaiPheDuyet":"Chờ xác nhận",
-        "SoLuotXacNhan":"1"
-    },
-    {
-        "MSSV":"B1912BM01150",
-        "MaBieuMau":"",
-        "NgayDangKy":"10/10/2022",
-        "NgayDuyet":"6/11/2022",
-        "NguoiDuyet":"admin",
-        "TrangThaiPheDuyet":"Chờ xác nhận",
-        "SoLuotXacNhan":"1"
     }
 ]

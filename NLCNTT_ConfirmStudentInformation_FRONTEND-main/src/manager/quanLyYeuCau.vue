@@ -13,14 +13,14 @@ export default {
         async retrieveContacts() {
             try {
                 this.listThongTinDangKy = await ThongTinDangKyService.getAll();
-                this.listThongTinDangKy = this.listThongTinDangKy.filter((e)=>e.TrangThaiPheDuyet=="Chờ xác nhận")
+                this.listThongTinDangKy = this.listThongTinDangKy.filter((e) => e.TrangThaiPheDuyet == "Chờ xác nhận")
             } catch (error) {
                 console.log(error);
             }
         },
         async handleSubmit(data) {
             data.NgayDuyet = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" });
-            data.NguoiDuyet='admin'
+            data.NguoiDuyet = 'admin'
             await ThongTinDangKyService.update(data.id, data);
             this.retrieveContacts();
         }
@@ -57,7 +57,8 @@ export default {
                             <div class="row  mt-4">
 
 
-                                <table class="table table-hover text-center table table-bordered">
+                                <!-- <table class="table table-hover text-center table table-bordered"> -->
+                                <table class="table table-hover  ">
                                     <thead class="">
                                         <tr class="text-danger">
                                             <th scope="col ">STT</th>
@@ -71,22 +72,25 @@ export default {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr v-for="(thongTinDangKy, index) in this.listThongTinDangKy"  >
-                                            <th  scope="row ">{{ index + 1 }}</th>
-                                            <td >{{ thongTinDangKy.thongTin.MSSV }}</td>
-                                            <td >{{ thongTinDangKy.thongTin.HoTen }}</td>
-                                            <td >{{ thongTinDangKy.allThongTin.TenBieuMau }}</td>
+                                        <tr v-for="(thongTinDangKy, index) in this.listThongTinDangKy">
+                                            <th scope="row ">{{ index + 1 }}</th>
+                                            <td>{{ thongTinDangKy.thongTin.MSSV }}</td>
+                                            <td>{{ thongTinDangKy.thongTin.HoTen }}</td>
+                                            <td>{{ thongTinDangKy.allThongTin.TenBieuMau }}</td>
                                             <!-- <td>{{ thongTinDangKy.thongTin.Email }}</td> -->
-                                            <td >{{ thongTinDangKy.NgayDangKy }}</td>
-                                            <td  class="text-primary">{{ thongTinDangKy.thongTin.TrangThaiSinhVien }}
+                                            <td>{{ thongTinDangKy.NgayDangKy }}</td>
+                                            <td class="text-primary">{{ thongTinDangKy.thongTin.TrangThaiSinhVien }}
                                             </td>
-                                            <td  class="">
-                                                <a class=""
+                                            <td class="row">
+                                                <a class="col-1 text-success"
                                                     @click="handleSubmit({ id: thongTinDangKy._id, TrangThaiPheDuyet: 'Đã xác nhận' })"><i
                                                         class="fas fa-check text-success me-1 "></i></a>
-                                                <a class="l"
+                                                <a 
                                                     @click="handleSubmit({ id: thongTinDangKy._id, TrangThaiPheDuyet: 'Đã hủy' })">
                                                     <i class="fas fa-ban text-danger "></i>
+                                                </a>
+                                                <a class="col-1">
+                                                    <i class="fa-solid fa-circle-info text-dark"></i>
                                                 </a>
                                             </td>
                                         </tr>

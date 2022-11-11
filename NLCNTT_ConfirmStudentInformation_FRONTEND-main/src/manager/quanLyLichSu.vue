@@ -131,11 +131,14 @@ export default {
 </script>
 
 <template>
-    <HeaderAdmin />
-    <main>
-        <div class="container-fluid">
-            <div class="row p-0">
-                <SidebarAdmin />
+    
+    <main class="container-fluid">
+        <div class="row">
+            <SidebarAdmin class="col-3" />
+            <div class="col-9">
+                <HeaderAdmin />
+                
+                <div class="container-fluid">
                 <div class="col-9 main-admin p-0">
                     <div class="container">
                         <div class=" row  mt-4 p-0">
@@ -181,6 +184,7 @@ export default {
                         </div>
 
                     </div>
+                </div>
                 </div>
             </div>
         </div>

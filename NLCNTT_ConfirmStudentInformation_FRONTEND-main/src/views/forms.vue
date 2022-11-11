@@ -26,11 +26,11 @@ export default {
 
     }
   },
-  
+
 
   methods: {
 
-    async retrieveContacts() {
+    async retrieveThongTinDangKy() {
       try {
         this.listThongTinDangKy = await ThongTinDangKyService.getAll();
         this.listThongTinDangKy = this.listThongTinDangKy.filter((e) => e.MSSV == this.taikhoan.user.TenTaiKhoan)
@@ -41,7 +41,7 @@ export default {
 
   },
   mounted() {
-    this.retrieveContacts();
+    this.retrieveThongTinDangKy();
   },
 
 }
@@ -113,7 +113,7 @@ export default {
               <td> </td>
             </tr>
           </tbody>
-         
+
 
         </table>
         <div class="text-center">

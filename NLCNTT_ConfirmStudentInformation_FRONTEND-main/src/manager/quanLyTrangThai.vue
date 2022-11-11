@@ -149,7 +149,7 @@ export default {
 
                             </div>
                             <div class="text-center">
-                                <h3 class="fw-bold text-dark text-center ">DANH SÁCH KẾT ĐANG CHỜ PHÊ DUYỆT
+                                <h3 class="fw-bold text-dark text-center ">DANH SÁCH PHÊ DUYỆT
                                 </h3>
                             </div>
 
@@ -177,7 +177,7 @@ export default {
                                             <td>{{ thongTinDangKy.thongTin.HoTen }}</td>
                                             <td>{{ thongTinDangKy.allThongTin.TenBieuMau }}</td>
                                             <!-- <td>{{ thongTinDangKy.thongTin.Email }}</td> -->
-                                            <td class="text-primary">{{ thongTinDangKy.TrangThaiPheDuyet }}</td>
+                                            <td class="text-primary ">{{ thongTinDangKy.TrangThaiPheDuyet }}</td>
                                             <td>{{ thongTinDangKy.NgayDangKy }}</td>
                                             <td>{{ thongTinDangKy.NgayDuyet }}</td>
                                         </tr>

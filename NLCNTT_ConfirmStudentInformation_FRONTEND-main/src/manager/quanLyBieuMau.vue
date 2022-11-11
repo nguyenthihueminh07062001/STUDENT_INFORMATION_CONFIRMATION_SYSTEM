@@ -100,7 +100,7 @@ export default {
                 <div class="container-fluid">
                     <!-- <div class="row p-0"> -->
 
-                    <div class="col-9 main-admin p-0">
+                    <div class=" main-admin p-0">
                         <div class="container">
 
                             <div class="text-center">
