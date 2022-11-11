@@ -9,7 +9,6 @@ export default {
         }
     },
     methods: {
-
         async retrieveContacts() {
             try {
                 this.listThongTinDangKy = await ThongTinDangKyService.getAll();
@@ -24,7 +23,6 @@ export default {
             await ThongTinDangKyService.update(data.id, data);
             this.retrieveContacts();
         }
-
     },
     mounted() {
         this.retrieveContacts();
@@ -82,14 +80,14 @@ export default {
                                             <td class="text-primary">{{ thongTinDangKy.thongTin.TrangThaiSinhVien }}
                                             </td>
                                             <td class="row">
-                                                <a class="col-1 text-success"
+                                                <a class=" text-success"
                                                     @click="handleSubmit({ id: thongTinDangKy._id, TrangThaiPheDuyet: 'Đã xác nhận' })"><i
                                                         class="fas fa-check text-success me-1 "></i></a>
-                                                <a 
+                                                <a
                                                     @click="handleSubmit({ id: thongTinDangKy._id, TrangThaiPheDuyet: 'Đã hủy' })">
                                                     <i class="fas fa-ban text-danger "></i>
                                                 </a>
-                                                <a class="col-1">
+                                                <a class="">
                                                     <i class="fa-solid fa-circle-info text-dark"></i>
                                                 </a>
                                             </td>

@@ -26,7 +26,7 @@ export default {
 
     }
   },
-
+  
 
   methods: {
 
@@ -113,7 +113,7 @@ export default {
               <td> </td>
             </tr>
           </tbody>
-
+         
 
         </table>
         <div class="text-center">

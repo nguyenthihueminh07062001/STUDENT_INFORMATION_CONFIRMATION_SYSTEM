@@ -10,10 +10,8 @@
                 <!-- <p class="mb-4  fs-5">
                     <a class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
                         aria-controls="collapseExample">
-
                         <router-link class="font-normal text-light" :to="{ name: 'ADMIN' }">
                             Quản lý sinh viên</router-link>
-
                     </a>
                 </p> -->
                 <p class="mb-4 fs-5 ">
