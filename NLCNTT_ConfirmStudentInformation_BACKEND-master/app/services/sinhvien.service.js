@@ -23,6 +23,7 @@ class SinhVienService {
       NgayHetHanBH: payload.NgayHetHanBH,
       NoiDangKyKhamBH: payload.NoiDangKyKhamBH,
       LuotXacNhan: payload.LuotXacNhan,
+      GioiTinh:payload.GioiTinh,
     };
     // remove undifined filds
     Object.keys(sinhvien).forEach(

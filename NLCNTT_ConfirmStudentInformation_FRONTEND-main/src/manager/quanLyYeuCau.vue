@@ -2,6 +2,7 @@
 import HeaderAdmin from "../components/HeaderAdmin.vue";
 import ThongTinDangKyService from "../services/thongtindangky.service";
 import SidebarAdmin from "../components/SidebarAdmin.vue";
+import { divide } from "lodash";
 export default {
     data() {
         return {
@@ -18,7 +19,9 @@ export default {
             }
         },
         async handleSubmit(data) {
-            data.NgayDuyet = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" });
+            data.NgayDuyet = new Date().toLocaleString("vi-VN", {
+                timeZone: "Asia/Ho_Chi_Minh"
+            });
             data.NguoiDuyet = 'admin'
             await ThongTinDangKyService.update(data.id, data);
             this.retrieveContacts();
@@ -30,6 +33,7 @@ export default {
     components: {
         SidebarAdmin,
         HeaderAdmin,
+        divide
     },
 }
 </script>
@@ -37,7 +41,6 @@ export default {
 <template>
     <main class="container-fluid">
         <div class="row">
-
 
             <SidebarAdmin class="col-3" />
             <div class="col-9">
@@ -53,7 +56,6 @@ export default {
                                 </h3>
                             </div>
                             <div class="row  mt-4">
-
 
                                 <!-- <table class="table table-hover text-center table table-bordered"> -->
                                 <table class="table table-hover  ">
@@ -74,7 +76,7 @@ export default {
                                             <th scope="row ">{{ index + 1 }}</th>
                                             <td>{{ thongTinDangKy.thongTin.MSSV }}</td>
                                             <td>{{ thongTinDangKy.thongTin.HoTen }}</td>
-                                            <td>{{ thongTinDangKy.allThongTin.TenBieuMau }}</td>
+                                            <td class="col-3">{{ thongTinDangKy.allThongTin.TenBieuMau }}</td>
                                             <!-- <td>{{ thongTinDangKy.thongTin.Email }}</td> -->
                                             <td>{{ thongTinDangKy.NgayDangKy }}</td>
                                             <td class="text-primary">{{ thongTinDangKy.thongTin.TrangThaiSinhVien }}
@@ -88,11 +90,80 @@ export default {
                                                     <i class="fas fa-ban text-danger "></i>
                                                 </a>
                                                 <a class="">
-                                                    <i class="fa-solid fa-circle-info text-dark"></i>
+                                                    <i class="fa-solid fa-circle-info text-dark" data-toggle="modal"
+                                                        data-target="#exampleModal"></i>
                                                 </a>
+                                                <div>
+                                                    <!-- Button trigger modal -->
+                                                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                                        Launch demo modal
+                                                    </button> -->
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                        role="dialog" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Thông
+                                                                        tin đăng ký</h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class=""
+                                                                        v-for="(thongTinDangKy, index) in this.listThongTinDangKy">
+                                                                        <div class="row">
+                                                                            <div class="col-5">Tên biểu mẫu đăng ký :
+                                                                            </div>
+                                                                            <div class="col-7">
+                                                                                {{ thongTinDangKy.allThongTin.TenBieuMau
+                                                                                }}</div>
+                                                                            <div class="col-5"> Họ và tên sinh viên:
+                                                                            </div>
+                                                                            <div class="col-7">{{
+                                                                                    thongTinDangKy.thongTin.HoTen
+                                                                            }}</div>
+                                                                            <div class="col-5">Ngày sinh :</div>
+                                                                            <div class="col-7">{{
+                                                                                    thongTinDangKy.thongTin.NgaySinh
+                                                                            }}
+                                                                            </div>
+                                                                            <div class="col-5">Giới tính :</div>
+                                                                            <div class="col-7">{{
+                                                                                    thongTinDangKy.thongTin.GioiTinh
+                                                                            }}
+                                                                            </div>
+                                                                            <div class="col-5">Số chứng minh :</div>
+                                                                            <div class="col-7">{{
+                                                                                    thongTinDangKy.thongTin.SoCMND
+                                                                            }} </div>
+                                                                            <div class="col-6">Ngành học :</div>
+                                                                            <div class="col-6">{{
+                                                                                    thongTinDangKy.thongTin.TenNganh
+                                                                            }} </div>
+                                                                            <br>
+                                                                        </div>
+                                                                        <!-- <p scope="row ">{{ index + 1 }}</p>
+                                        <p>{{ thongTinDangKy.thongTin.HoTen }}</p>
+                                        <p>{{ thongTinDangKy.allThongTin.TenBieuMau }}</p> -->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-primary">Save
+                                                                        changes</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
-
 
                                     </tbody>
                                 </table>
@@ -106,6 +177,7 @@ export default {
         </div>
     </main>
 </template>
+
 <style>
 body {
     font-family: 'Poppings', sans-serif !important;

@@ -45,11 +45,11 @@ export default {
 
 
 <template>
-    <HeaderPublic/>
+    <HeaderPublic />
     <div class="container  ">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center container-fram">
             <div class="col-sm-12 col-md-8 col-lg-4 mb-2  rounded frame-login">
-                <h2 class="text-center pt-2">Đăng nhập</h2>
+                <h2 class="text-center pt-2 login-title">Đăng nhập</h2>
                 <div class="justify-content-center">
                     <div class="form-group   ">
                         <label for="mssv " class="">Tên Tài khoản:</label>
@@ -75,7 +75,7 @@ export default {
         </div>
 
     </div>
-    <PublicFooters/>
+    <PublicFooters />
 </template>
 
 
@@ -105,7 +105,7 @@ h2 {
 
 .btn-submit:hover {
     background-color: rgb(116, 171, 235);
-   
+
 }
 
 .btn-submit:active {
@@ -125,7 +125,11 @@ h2 {
 }
 
 .frame-login {
-   
-    border: double black;
+    margin-top: 4%;
+    background-color: rgb(249, 250, 251);
+    box-shadow: 3px 5px 5px 5px #888888;
+}
+.login-title{
+    padding-top: 2%;
 }
 </style>

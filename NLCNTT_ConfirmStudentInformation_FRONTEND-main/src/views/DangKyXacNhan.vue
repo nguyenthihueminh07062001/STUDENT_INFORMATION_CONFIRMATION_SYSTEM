@@ -170,53 +170,10 @@ export default {
                 Đăng ký xác nhận
               </th>
             </tr>
-            <!-- <tr class="text-dark use-color">
-
-                            <td colspan="">
-
-                                Tên mẫu xác nhận:
-                                <select id="" name="">
-                                    <option value="tatca">Tất cả`</option>
-                                    <option value="vayvon">1 - Đơn yêu cầu xác nhận vay vốn</option>
-                                    <option value="quansu">2 - Đơn yêu cầu hoãn nghĩa vụ quân sự </option>
-                                </select>
-                            </td>
-                            <td colspan="3">
-                                Trạng thái:
-                                <select id="" name="">
-                                    <option value="tatca">Tất cả</option>
-                                    <option value="vayvon">Đã in</option>
-                                    <option value="quansu">Chưa in</option>
-                                </select>
-                                <button class="text-light button-1">&nbsp;Liệt kê</button>
-                            </td>
-
-                        </tr> -->
-            <!-- <tr class="  text-dark  use-color ">
-
-                            <th scope="col ">STT</th>
-                            <th scope="col">Tên mẫu xác nhận</th>
-                            <th scope="col">Ngày yêu cầu</th>
-                            <th scope="col">Trạng thái</th>
-                            <th scope="col">Ghi chú</th>
-                            <th scope="col">
-                                <label for="vehicle1">Chọn</label>
-                                <input type="checkbox" id="check" name="" value="">
-
-                            </th>
-                        </tr> -->
           </thead>
           <tbody class="text-left">
             <tr>
-              <!-- <td colspan="6" class="text-center">
-
-                                Tên mẫu xác nhận:
-                                <select id="" name="">
-                                    <option value="">1 - Đơn yêu cầu xác nhận vay vốn</option>
-                                    <option value="">2 - Đơn yêu cầu hoãn nghĩa vụ quân sự </option>
-                                    
-                                </select>
-                            </td> -->
+            
               <td colspan="6" class="text-center">
 
                 Tên mẫu xác nhận:
@@ -245,11 +202,14 @@ export default {
                     Thêm
 
                   </a>
-
-                  <a class="btn btn-primary text-light" href="#" role="button">
+                    <router-link class=" btn btn-primary text-light" :to="{ name: 'Forms' }">Hủy
+                    </router-link>
+                 
+                
+                  <!-- <a class="btn btn-primary text-light" href="#" role="button">
                     <router-link class=" text-light" :to="{ name: 'Forms' }">Hủy
                     </router-link>
-                  </a>
+                  </a> -->
                 </div>
               </td>
 

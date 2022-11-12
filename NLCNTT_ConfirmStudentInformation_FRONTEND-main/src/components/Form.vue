@@ -70,14 +70,15 @@ export default {
                     <Field name="name" type="" class="form-control" v-model="this.bieuMauLocal.TenBieuMau" />
                     <ErrorMessage name="name" class="error-feedback text-center" />
                 </div>
-                <div class="form-group form-group-details">
+                <div class="form-group form-group-details text-center hover">
                     <button class="btn btn-primary text-light" @click="submitBieuMau">
-                        <i class="fas fa-save "></i> Lưu
+                        <!-- <i class="fas fa-save "></i> -->
+                         Lưu
                     </button>
 
                     <button v-if="this.bieuMauLocal._id" type="button" class="ml-2 btn btn-danger  text-light"
                         @click="deleteBieuMau">
-                        <i class="fas fa-trash"></i>
+                        <!-- <i class="fas fa-trash"></i> -->
                         Xóa
                     </button>
                 </div>
@@ -94,7 +95,7 @@ export default {
 </template>
 <style>
 .container-frame {
-    box-shadow: 8px 5px 5px 5px #888888;
+    box-shadow: 3px 5px 5px 5px #888888;
     margin-top: 7%;
 
 }
