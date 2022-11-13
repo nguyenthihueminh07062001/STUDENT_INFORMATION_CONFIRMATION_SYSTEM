@@ -54,7 +54,7 @@ class ThongTinDangKyService {
       { $unwind: "$allThongTin" },
     ]);
     return await resultAll.toArray();
-  }
+  }npm 
   // async getAllOfThongTinBieuMau(){
   //   const resultAll = await this.ThongTinBieuMau.aggregate([
   //     {

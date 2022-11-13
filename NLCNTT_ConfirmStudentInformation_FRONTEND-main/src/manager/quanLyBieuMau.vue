@@ -107,7 +107,7 @@ export default {
                                 <h3 class="fw-bold text-dark text-center title-manager mb-2">DANH SÁCH CÁC BIỂU MẪU
                                 </h3>
                             </div>
-                            <div class="mt-2 mb-2">
+                            <div class="mt-2 mb-2 action">
                                 <button type="button"
                                     class="text-light bg-primary btn btn-addform border border-dark ml-2"
                                     @click="goToAddForm">
@@ -181,6 +181,11 @@ export default {
 }
 
 .title-manager {
-    margin: 0;
+    margin-bottom: 10%;
+    
+}
+.action{
+    padding-top:3%;
+    padding-bottom: 1%;
 }
 </style>

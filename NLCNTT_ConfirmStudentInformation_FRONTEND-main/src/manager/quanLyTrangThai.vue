@@ -143,7 +143,7 @@ export default {
                         <div class="container">
                        
                             <div class="text-center">
-                                <h3 class="fw-bold text-dark text-center title-manager">DANH SÁCH PHÊ DUYỆT
+                                <h3 class="fw-bold text-dark text-center ">DANH SÁCH PHÊ DUYỆT
                                 </h3>
                             </div>
 
@@ -199,6 +199,7 @@ body {
 }
 .title-manager {
     margin: 0;
+    padding: 0;
 }
 
 .status {

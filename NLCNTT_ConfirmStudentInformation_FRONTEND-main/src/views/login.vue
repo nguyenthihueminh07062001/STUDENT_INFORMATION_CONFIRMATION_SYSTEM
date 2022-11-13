@@ -47,9 +47,9 @@ export default {
 <template>
     <HeaderPublic />
     <div class="container  ">
-        <div class="row justify-content-center container-fram">
-            <div class="col-sm-12 col-md-8 col-lg-4 mb-2  rounded frame-login">
-                <h2 class="text-center pt-2 login-title">Đăng nhập</h2>
+        <div class="row justify-content-center ">
+            <div class="col-sm-12 col-md-8 col-lg-4   rounded frame-login">
+                <h2 class="text-center login-title">Đăng nhập</h2>
                 <div class="justify-content-center">
                     <div class="form-group   ">
                         <label for="mssv " class="">Tên Tài khoản:</label>
@@ -130,6 +130,6 @@ h2 {
     box-shadow: 3px 5px 5px 5px #888888;
 }
 .login-title{
-    padding-top: 2%;
+    padding-top: 5%;
 }
 </style>

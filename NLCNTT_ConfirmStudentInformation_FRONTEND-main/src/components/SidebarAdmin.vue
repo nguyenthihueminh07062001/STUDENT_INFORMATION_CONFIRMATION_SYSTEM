@@ -30,7 +30,7 @@
                         aria-controls="collapseExample">
 
                         <router-link class="font-normal text-light" :to="{ name: 'QuanLyBieuMau' }">
-                            Quản lý Biểu mẫu</router-link>
+                            Quản lý biểu mẫu</router-link>
 
                     </a>
                 </p>
@@ -58,30 +58,12 @@
                 </p>
                 <div class="collapse" id="collapseExample2">
                 </div>
-
-
-                <p class="mb-4 fs-5">
-                    <a class="" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false"
-                        aria-controls="collapseExample">
-
-                        <router-link class="font-normal text-light" :to="{ name: 'QuanLyLichSu' }">
-                            Quản lý lich sử</router-link>
-
-                    </a>
-                </p>
-                <div class="collapse" id="collapseExample2">
-                </div>
-
                 <p class="mb-4 fs-5 ">
-                    <a class="" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
-                        aria-controls="collapseExample">
-                        <i class="fa-solid fa-chart-simple"></i>
-                        Thống kê
-                    </a>
-                    <!-- <i class="fas fa-angle-down arrow-down-2"></i><i class="fas fa-angle-right arrow-right-2"></i> -->
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <router-link data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
+                        aria-controls="collapseExample" class="font-normal text-light" :to="{ name: 'ThongKe' }">
+                        Thống kê</router-link>
                 </p>
-                <div class="collapse" id="collapseExample1">
-                </div>
 
             </div>
 

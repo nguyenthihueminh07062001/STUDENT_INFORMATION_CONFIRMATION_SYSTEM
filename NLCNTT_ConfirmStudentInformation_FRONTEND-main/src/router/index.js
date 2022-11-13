@@ -19,11 +19,10 @@ import QuanLyYeuCau from "@/manager/quanLyYeuCau.vue";
 import QuanLyTrangThai from "@/manager/quanLyTrangThai.vue";
 // //quan ly bieu mau
 import QuanLyBieuMau from "@/manager/quanLyBieuMau.vue";
-// //quan ly lich su
- import QuanLyLichSu from "@/manager/quanLyLichSu.vue";
 // //dang ky xac nhan
  import DangKyXacNhan from "@/views/DangKyXacNhan.vue";
-
+// //thong ke
+ import ThongKe from "@/manager/ThongKe.vue";
 
 
 //edit form
@@ -66,37 +65,7 @@ const routes = [
     name: "Forms",
     component: Forms,
   },
-  //biểu mẫu đăng ký toạn hoãn nghĩa vụ quân sự
-  // {
-  //   path: "/tamHoanNghiaVuQuanSu",
-  //   name: "THNVQS",
-  //   component: THNVQS,
-  // },
-  // // biểu mẫu đăng ký tư vấn sức khỏe
-  // {
-  //   path: "/tuVanTamLy",
-  //   name: "TVTL",
-  //   component: TVTL,
-  // },
-  // // biểu mẫu đăng ký không mua bảo hiểm y tế của trường
-  // {
-  //   path: "/baoHiemYTe",
-  //   name: "BHYT",
-  //   component: BHYT,
-  // },
 
-  // // biểu mẫu điều chỉnh thông tin sinh viên
-  // {
-  //   path: "/dieuChinhThongTin",
-  //   name: "DCTT",
-  //   component: DCTT,
-  // },
-  // // biểu mẫu đăng ký xác nhận vay vốn
-  // {
-  //   path: "/xacNhanVayVon",
-  //   name: "XNVV",
-  //   component: XNVV,
-  // },
   //dang ky xac nhan
   {
     path: "/DangKyXacNhan",
@@ -129,11 +98,12 @@ const routes = [
     name: "QuanLyBieuMau",
     component: QuanLyBieuMau,
   },
-  //quan ly lich su phe duyet
+
+  //thong ke
   {
-    path: "/quanLyLichSu",
-    name: "QuanLyLichSu",
-    component: QuanLyLichSu,
+    path: "/thongke",
+    name: "ThongKe",
+    component: ThongKe,
   },
   {
     path: "/formAdd",

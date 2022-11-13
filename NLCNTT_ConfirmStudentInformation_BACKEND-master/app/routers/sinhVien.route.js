@@ -5,7 +5,6 @@ const router = express.Router();
 
 router
   .route("/")
-  // .post(sinhVien.create)
   .get(sinhVien.findAll);
   
 

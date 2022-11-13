@@ -7,74 +7,74 @@ exports.findOne = async (req, res, next) => {
     const taikhoanService = new TaiKhoanService(MongoDB.client);
     const document = await taikhoanService.findById(req.params.id);
     if (!document) {
-      return next(new ApiError(404, "Tai khoan not found"));
+      return next(new ApiError(404, "Không tìm thấy tài khoản"));
     }
     return res.send(document);
   } catch (error) {
     return next(
-      new ApiError(500, `Error retrieving tai khoan with id=${req.params.id}`)
+      new ApiError(500, `Đã xảy ra lỗi khi truy xuất với id=${req.params.id}`)
     );
   }
 };
 
-exports.update = async (req, res, next) => {
-  if (Object.keys(req.body).length === 0) {
-    return next(new ApiError(400, "Data to update can not be empty"));
-  }
-  try {
-    const taikhoanService = new TaiKhoanService(MongoDB.client);
-    const document = await taikhoanService.update(req.params.id, req.body);
-    if (!document) {
-      return next(new ApiError(404, "Tai khoan not found"));
-    }
-    return res.send({ message: "Tai khoan was updated successfully" });
-  } catch (error) {
-    return next(
-      new ApiError(500, `Error updating tai khoan with id=${req.params.id}`)
-    );
-  }
-};
+// exports.update = async (req, res, next) => {
+//   if (Object.keys(req.body).length === 0) {
+//     return next(new ApiError(400, "Dữ liệu để cập nhật không được rỗng"));
+//   }
+//   try {
+//     const taikhoanService = new TaiKhoanService(MongoDB.client);
+//     const document = await taikhoanService.update(req.params.id, req.body);
+//     if (!document) {
+//       return next(new ApiError(404, "Không tìm thấy tài khoản"));
+//     }
+//     return res.send({ message: "Tài khoản đã được cập nhật thành công" });
+//   } catch (error) {
+//     return next(
+//       new ApiError(500, `Lỗi cập nhật tài khoản với id=${req.params.id}`)
+//     );
+//   }
+// };
 //
-exports.delete = async (req, res, next) => {
-  try {
-    const taikhoanServiceService = new TaiKhoanService(MongoDB.client);
-    const document = await taikhoanService.delete(req.params.id);
-    if (!document) {
-      return next(new ApiError(404, "Tai khoan not found"));
-    }
-    return res.send({ message: " Tai khoan was deleted successfull " });
-  } catch (error) {
-    return next(
-      new ApiError(500, `Could not deleted tai khoan with id=${req.params.id}`)
-    );
-  }
-};
+// exports.delete = async (req, res, next) => {
+//   try {
+//     const taikhoanServiceService = new TaiKhoanService(MongoDB.client);
+//     const document = await taikhoanService.delete(req.params.id);
+//     if (!document) {
+//       return next(new ApiError(404, "Không tìm thấy tài khoản"));
+//     }
+//     return res.send({ message: " Tài khoản đã được xóa thành công " });
+//   } catch (error) {
+//     return next(
+//       new ApiError(500, `Không thể xóa tài khoản với id=${req.params.id}`)
+//     );
+//   }
+// };
 
-exports.deleteAll = async (_req, res, next) => {
-  try {
-    const taikhoanServiceService = new TaiKhoanService(MongoDB.client);
-    const deletedCount = await taikhoanService.deleteAll();
-    return res.send({
-      message: `${deletedCount} Tai khoan were deleted successfully`,
-    });
-  } catch (error) {
-    return next(
-      new ApiError(500, "An error occurred while removing all tai khoan")
-    );
-  }
-};
+// exports.deleteAll = async (_req, res, next) => {
+//   try {
+//     const taikhoanServiceService = new TaiKhoanService(MongoDB.client);
+//     const deletedCount = await taikhoanService.deleteAll();
+//     return res.send({
+//       message: `${deletedCount} Tai khoan were deleted successfully`,
+//     });
+//   } catch (error) {
+//     return next(
+//       new ApiError(500, "An error occurred while removing all tai khoan")
+//     );
+//   }
+// };
 
-exports.findAllFavorite = async (req, res, next) => {
-  try {
-    const taikhoanService = new TaiKhoanService(MongoDB.client);
-    const documents = await taikhoanService.findAllFavorite();
-    return res.send(documents);
-  } catch (error) {
-    return next(
-      new ApiError(500, "An error occurred while retrieving favorite tai khoan")
-    );
-  }
-};
+// exports.findAllFavorite = async (req, res, next) => {
+//   try {
+//     const taikhoanService = new TaiKhoanService(MongoDB.client);
+//     const documents = await taikhoanService.findAllFavorite();
+//     return res.send(documents);
+//   } catch (error) {
+//     return next(
+//       new ApiError(500, "An error occurred while retrieving favorite tai khoan")
+//     );
+//   }
+// };
 
 //create and save a new tai khoan
 exports.login = async (req, res, next) => {
@@ -88,7 +88,7 @@ exports.login = async (req, res, next) => {
     }
   } catch (error) {
     return next(
-      new ApiError(500, "An error occurred while creating the taif khoan")
+      new ApiError(500, "Lỗi trong khi đăng nhập")
     );
   }
 };
@@ -108,9 +108,7 @@ exports.findAll = async (req, res, next) => {
       documents = await taikhoanService.find({});
     }
   } catch (error) {
-    return next(
-      new ApiError(500, "An error occurred while retrieving tai khoan")
-    );
+    return next(new ApiError(500, "Đã xảy ra lỗi khi truy xuất tài khoản"));
   }
 
   return res.send(documents);

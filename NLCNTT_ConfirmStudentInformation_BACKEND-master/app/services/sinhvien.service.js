@@ -9,7 +9,7 @@ class SinhVienService {
       SoDienThoai: payload.SoDienThoai,
       NgaySinh: payload.NgaySinh,
       GioiTinh: payload.GioiTinh,
-      DiaChi:payload.DiaChi,
+      DiaChi: payload.DiaChi,
       SoCMND: payload.SoCMND,
       DanToc: payload.DanToc,
       MaLop: payload.MaLop,

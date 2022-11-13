@@ -8,9 +8,7 @@ exports.findAll = async (req, res, next) => {
     const thongTinDangKyService = new ThongTinDangKyService(MongoDB.client);
     documents = await thongTinDangKyService.getAllThongTinDangKy();
   } catch (error) {
-    return next(
-      new ApiError(500, "An error occurred while retrieving tt bieu mau")
-    );
+    return next(new ApiError(500, "Đã xảy ra lỗi khi truy xuất thoong tin đăng ký"));
   }
 
   return res.send(documents);
@@ -22,16 +20,14 @@ exports.create = async (req, res, next) => {
     const documents = await thongTinDangKyService.create(req.body);
     return res.send(documents);
   } catch (error) {
-    return next(
-      new ApiError(500, "An error occurred while retrieving tt bieu mau")
-    );
+    return next(new ApiError(500, "Đã xảy ra lỗi khi truy xuất thông tin đăng ký"));
   }
 
 };
 
 exports.update = async (req, res, next) => {
   if (Object.keys(req.body).length === 0) {
-    return next(new ApiError(400, "Data to update can not be empty"));
+    return next(new ApiError(400, "Dữ liệu không thể rỗng"));
   }
   try {
     const thongTinDangKyService = new ThongTinDangKyService(MongoDB.client);
@@ -40,12 +36,12 @@ exports.update = async (req, res, next) => {
       req.body
     );
     if (!document) {
-      return next(new ApiError(404, "Bieu mau not found"));
+      return next(new ApiError(404, "Không thể tìm thấy thông tin đăng ký"));
     }
-    return res.send({ message: "Bieu mau was updated successfully" });
+    return res.send({ message: "Thông tin đăng ký đã cập nhật thành công" });
   } catch (error) {
     return next(
-      new ApiError(500, `Error updating tt bieu mau with id=${req.params.id}`)
+      new ApiError(500, `Lỗi cập nhật với id=${req.params.id}`)
     );
   }
 };
