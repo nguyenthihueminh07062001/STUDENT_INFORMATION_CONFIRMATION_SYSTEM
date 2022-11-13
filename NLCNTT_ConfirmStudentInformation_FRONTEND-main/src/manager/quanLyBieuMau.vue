@@ -104,12 +104,23 @@ export default {
                         <div class="container">
 
                             <div class="text-center">
-                                <h3 class="fw-bold text-dark text-center ">DANH SÁCH CÁC BIỂU MẪU
+                                <h3 class="fw-bold text-dark text-center title-manager mb-2">DANH SÁCH CÁC BIỂU MẪU
                                 </h3>
                             </div>
-                            <div>
-                                <button type="button" class="btn btn-addform border border-dark" @click="goToAddForm">
+                            <div class="mt-2 mb-2">
+                                <button type="button"
+                                    class="text-light bg-primary btn btn-addform border border-dark ml-2"
+                                    @click="goToAddForm">
+                                    <i class="fa-solid fa-plus"></i>
                                     Thêm biểu mẫu
+                                </button>
+                                <button type="button"
+                                    class="btn btn-addform border border-dark ml-2 text-light bg-warning">
+                                    Xuất file <i class="fa-solid fa-file-pdf"></i>
+                                </button>
+                                <button type="button"
+                                    class="btn btn-addform  border border-dark ml-2 text-light bg-success">
+                                    Xuất file <i class="fa-sharp fa-solid fa-file-excel"></i>
                                 </button>
 
 
@@ -167,5 +178,9 @@ export default {
 <style>
 .status {
     font-size: 80 !important;
+}
+
+.title-manager {
+    margin: 0;
 }
 </style>

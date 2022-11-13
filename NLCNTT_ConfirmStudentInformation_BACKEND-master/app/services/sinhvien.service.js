@@ -8,6 +8,8 @@ class SinhVienService {
       Email: payload.Email,
       SoDienThoai: payload.SoDienThoai,
       NgaySinh: payload.NgaySinh,
+      GioiTinh: payload.GioiTinh,
+      DiaChi:payload.DiaChi,
       SoCMND: payload.SoCMND,
       DanToc: payload.DanToc,
       MaLop: payload.MaLop,
@@ -23,7 +25,7 @@ class SinhVienService {
       NgayHetHanBH: payload.NgayHetHanBH,
       NoiDangKyKhamBH: payload.NoiDangKyKhamBH,
       LuotXacNhan: payload.LuotXacNhan,
-      GioiTinh:payload.GioiTinh,
+      GioiTinh: payload.GioiTinh,
     };
     // remove undifined filds
     Object.keys(sinhvien).forEach(

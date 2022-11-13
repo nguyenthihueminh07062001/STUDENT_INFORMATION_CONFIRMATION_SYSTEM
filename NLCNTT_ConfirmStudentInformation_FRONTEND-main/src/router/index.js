@@ -4,25 +4,25 @@ import Login from "@/views/login.vue";
 import Notify from "@/views/notify.vue";
 import Intro from "@/views/intro.vue";
 import Forms from "@/views/forms.vue";
-import THNVQS from "@/views/tamHoanNghiaVuQuanSu.vue";
-import TVTL from "@/views/tuVanTamLy.vue";
-import BHYT from "@/views/baoHiemYTe.vue";
-import DCTT from "@/views/dieuChinhThongTin.vue";
-import XNVV from "@/views/xacNhanVayVon.vue";
+// import THNVQS from "@/views/tamHoanNghiaVuQuanSu.vue";
+// import TVTL from "@/views/tuVanTamLy.vue";
+// import BHYT from "@/views/baoHiemYTe.vue";
+// import DCTT from "@/views/dieuChinhThongTin.vue";
+// import XNVV from "@/views/xacNhanVayVon.vue";
 
 
 //admin
 import ADMIN from "@/manager/admin.vue";
 //quan ly yeu cau
 import QuanLyYeuCau from "@/manager/quanLyYeuCau.vue";
-//quan ly trang thai
+// //quan ly trang thai
 import QuanLyTrangThai from "@/manager/quanLyTrangThai.vue";
-//quan ly bieu mau
+// //quan ly bieu mau
 import QuanLyBieuMau from "@/manager/quanLyBieuMau.vue";
-//quan ly lich su
-import QuanLyLichSu from "@/manager/quanLyLichSu.vue";
-//dang ky xac nhan
-import DangKyXacNhan from "@/views/DangKyXacNhan.vue";
+// //quan ly lich su
+ import QuanLyLichSu from "@/manager/quanLyLichSu.vue";
+// //dang ky xac nhan
+ import DangKyXacNhan from "@/views/DangKyXacNhan.vue";
 
 
 
@@ -67,36 +67,36 @@ const routes = [
     component: Forms,
   },
   //biểu mẫu đăng ký toạn hoãn nghĩa vụ quân sự
-  {
-    path: "/tamHoanNghiaVuQuanSu",
-    name: "THNVQS",
-    component: THNVQS,
-  },
-  // biểu mẫu đăng ký tư vấn sức khỏe
-  {
-    path: "/tuVanTamLy",
-    name: "TVTL",
-    component: TVTL,
-  },
-  // biểu mẫu đăng ký không mua bảo hiểm y tế của trường
-  {
-    path: "/baoHiemYTe",
-    name: "BHYT",
-    component: BHYT,
-  },
+  // {
+  //   path: "/tamHoanNghiaVuQuanSu",
+  //   name: "THNVQS",
+  //   component: THNVQS,
+  // },
+  // // biểu mẫu đăng ký tư vấn sức khỏe
+  // {
+  //   path: "/tuVanTamLy",
+  //   name: "TVTL",
+  //   component: TVTL,
+  // },
+  // // biểu mẫu đăng ký không mua bảo hiểm y tế của trường
+  // {
+  //   path: "/baoHiemYTe",
+  //   name: "BHYT",
+  //   component: BHYT,
+  // },
 
-  // biểu mẫu điều chỉnh thông tin sinh viên
-  {
-    path: "/dieuChinhThongTin",
-    name: "DCTT",
-    component: DCTT,
-  },
-  // biểu mẫu đăng ký xác nhận vay vốn
-  {
-    path: "/xacNhanVayVon",
-    name: "XNVV",
-    component: XNVV,
-  },
+  // // biểu mẫu điều chỉnh thông tin sinh viên
+  // {
+  //   path: "/dieuChinhThongTin",
+  //   name: "DCTT",
+  //   component: DCTT,
+  // },
+  // // biểu mẫu đăng ký xác nhận vay vốn
+  // {
+  //   path: "/xacNhanVayVon",
+  //   name: "XNVV",
+  //   component: XNVV,
+  // },
   //dang ky xac nhan
   {
     path: "/DangKyXacNhan",

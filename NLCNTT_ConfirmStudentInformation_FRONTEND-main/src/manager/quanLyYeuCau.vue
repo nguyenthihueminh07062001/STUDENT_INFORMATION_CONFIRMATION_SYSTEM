@@ -6,7 +6,8 @@ import { divide } from "lodash";
 export default {
     data() {
         return {
-            listThongTinDangKy: []
+            listThongTinDangKy: [],
+            selected: null,
         }
     },
     methods: {
@@ -77,13 +78,12 @@ export default {
                                             <td>{{ thongTinDangKy.thongTin.MSSV }}</td>
                                             <td>{{ thongTinDangKy.thongTin.HoTen }}</td>
                                             <td class="col-3">{{ thongTinDangKy.allThongTin.TenBieuMau }}</td>
-                                            <!-- <td>{{ thongTinDangKy.thongTin.Email }}</td> -->
                                             <td>{{ thongTinDangKy.NgayDangKy }}</td>
                                             <td class="text-primary">{{ thongTinDangKy.thongTin.TrangThaiSinhVien }}
                                             </td>
                                             <td class="row">
                                                 <a class=" text-success"
-                                                    @click="handleSubmit({ id: thongTinDangKy._id, TrangThaiPheDuyet: 'Đã xác nhận' })"><i
+                                                    @click="handleSubmit({ id: thongTinDangKy._id, TrangThaiPheDuyet: 'Đã duyệt' })"><i
                                                         class="fas fa-check text-success me-1 "></i></a>
                                                 <a
                                                     @click="handleSubmit({ id: thongTinDangKy._id, TrangThaiPheDuyet: 'Đã hủy' })">
@@ -91,7 +91,8 @@ export default {
                                                 </a>
                                                 <a class="">
                                                     <i class="fa-solid fa-circle-info text-dark" data-toggle="modal"
-                                                        data-target="#exampleModal"></i>
+                                                        data-target="#exampleModal"
+                                                        @click="this.selected = thongTinDangKy"></i>
                                                 </a>
                                                 <div>
                                                     <!-- Button trigger modal -->
@@ -100,9 +101,9 @@ export default {
                                                     </button> -->
 
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                        role="dialog" aria-labelledby="exampleModalLabel"
-                                                        aria-hidden="true">
+                                                    <div v-if="this.selected != null" class="modal fade"
+                                                        id="exampleModal" tabindex="-1" role="dialog"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -114,49 +115,62 @@ export default {
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <div class=""
-                                                                        v-for="(thongTinDangKy, index) in this.listThongTinDangKy">
+                                                                    <div class="">
                                                                         <div class="row">
                                                                             <div class="col-5">Tên biểu mẫu đăng ký :
                                                                             </div>
                                                                             <div class="col-7">
-                                                                                {{ thongTinDangKy.allThongTin.TenBieuMau
+                                                                                {{ this.selected.allThongTin.TenBieuMau
                                                                                 }}</div>
                                                                             <div class="col-5"> Họ và tên sinh viên:
                                                                             </div>
                                                                             <div class="col-7">{{
-                                                                                    thongTinDangKy.thongTin.HoTen
+                                                                                    this.selected.thongTin.HoTen
                                                                             }}</div>
+                                                                            <div class="col-5">Email:
+                                                                            </div>
+                                                                            <div class="col-7">{{
+                                                                                this.selected.thongTin.Email
+                                                                                }}</div>
                                                                             <div class="col-5">Ngày sinh :</div>
                                                                             <div class="col-7">{{
-                                                                                    thongTinDangKy.thongTin.NgaySinh
+                                                                                    this.selected.thongTin.NgaySinh
                                                                             }}
                                                                             </div>
                                                                             <div class="col-5">Giới tính :</div>
                                                                             <div class="col-7">{{
-                                                                                    thongTinDangKy.thongTin.GioiTinh
+                                                                                    this.selected.thongTin.GioiTinh
                                                                             }}
                                                                             </div>
                                                                             <div class="col-5">Số chứng minh :</div>
                                                                             <div class="col-7">{{
-                                                                                    thongTinDangKy.thongTin.SoCMND
+                                                                                    this.selected.thongTin.SoCMND
                                                                             }} </div>
-                                                                            <div class="col-6">Ngành học :</div>
-                                                                            <div class="col-6">{{
-                                                                                    thongTinDangKy.thongTin.TenNganh
-                                                                            }} </div>
+                                                                           
+                                                                            <div class="col-5">Hộ khẩu thường trú :</div>
+                                                                            <div class="col-7">{{
+                                                                                this.selected.thongTin.DiaChi
+                                                                                }} </div>
+                                                                                <div class="col-5">Mã lớp :</div>
+                                                                                <div class="col-7">{{
+                                                                                    this.selected.thongTin.MaLop
+                                                                                    }} </div>
+                                                                                <div class="col-5">Ngành học :</div>
+                                                                                <div class="col-7">{{
+                                                                                    this.selected.thongTin.TenNganh
+                                                                                    }} </div>
+                                                                                    <div class="col-5">Khoa :</div>
+                                                                                    <div class="col-7">{{
+                                                                                        this.selected.thongTin.TenKhoa
+                                                                                        }} </div>
                                                                             <br>
                                                                         </div>
-                                                                        <!-- <p scope="row ">{{ index + 1 }}</p>
-                                        <p>{{ thongTinDangKy.thongTin.HoTen }}</p>
-                                        <p>{{ thongTinDangKy.allThongTin.TenBieuMau }}</p> -->
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-dismiss="modal">Close</button>
-                                                                    <button type="button" class="btn btn-primary">Save
-                                                                        changes</button>
+                                                                    <button type="button"
+                                                                        class="btn btn-primary text-light"
+                                                                        data-dismiss="modal">Đóng</button>
                                                                 </div>
                                                             </div>
                                                         </div>
