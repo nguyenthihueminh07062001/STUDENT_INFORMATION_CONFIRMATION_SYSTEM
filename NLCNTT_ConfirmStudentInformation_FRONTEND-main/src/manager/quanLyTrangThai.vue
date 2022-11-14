@@ -1,36 +1,36 @@
 
 
 <script>
-    import HeaderAdmin from "../components/HeaderAdmin.vue";
-    import ThongTinDangKyService from "../services/thongtindangky.service.js";
-    import SidebarAdmin from "../components/SidebarAdmin.vue";
-    export default {
-        components: {
-            SidebarAdmin,
-            HeaderAdmin,
-        },
-        data() {
-            return {
-                listThongTinDangKy: [],
+import HeaderAdmin from "../components/HeaderAdmin.vue";
+import ThongTinDangKyService from "../services/thongtindangky.service.js";
+import SidebarAdmin from "../components/SidebarAdmin.vue";
+export default {
+    components: {
+        SidebarAdmin,
+        HeaderAdmin,
+    },
+    data() {
+        return {
+            listThongTinDangKy: [],
+        }
+    },
+    methods: {
+
+        async retrieveStatus() {
+            try {
+                this.listThongTinDangKy = await ThongTinDangKyService.getAll();
+                console.log(this.listThongTinDangKy);
+            } catch (error) {
+                console.log(error);
             }
         },
-        methods: {
 
-            async retrieveStatus() {
-                try {
-                    this.listThongTinDangKy = await ThongTinDangKyService.getAll();
-                    console.log(this.listThongTinDangKy);
-                } catch (error) {
-                    console.log(error);
-                }
-            },
+    },
+    mounted() {
+        this.retrieveStatus();
+    },
 
-        },
-        mounted() {
-            this.retrieveStatus();
-        },
-
-    }
+}
 </script>
 
 <template>
@@ -44,7 +44,7 @@
                     <!-- <div class="row p-0"> -->
                     <div class=" main-admin p-0">
                         <div class="container">
-                       
+
                             <div class="text-center">
                                 <h3 class="fw-bold text-dark text-center ">DANH SÁCH PHÊ DUYỆT
                                 </h3>
@@ -63,7 +63,7 @@
                                             <th scope="col">Trạng thái phê duyệt</th>
                                             <th scope="col">Ngày đăng ký</th>
                                             <th scope="col">Ngày duyệt</th>
-                                            <th scope="col">Tác vụ</th>
+                                            <th scope="col">Gửi mail</th>
 
                                         </tr>
                                     </thead>
@@ -76,8 +76,9 @@
                                             <td class="text-primary ">{{ thongTinDangKy.TrangThaiPheDuyet }}</td>
                                             <td>{{ thongTinDangKy.NgayDangKy }}</td>
                                             <td>{{ thongTinDangKy.NgayDuyet }}</td>
-                                            <td class="row">
-                                                <a class=" text-dark text-center " ><i class="fa-solid fa-paper-plane"></i></a>
+                                            <td class="row ">
+                                                <a class=" text-dark text-center "><i
+                                                        class="fa-solid fa-paper-plane "></i></a>
                                             </td>
                                         </tr>
 
@@ -100,6 +101,7 @@
 body {
     font-family: 'Poppings', sans-serif !important;
 }
+
 .title-manager {
     margin: 0;
     padding: 0;

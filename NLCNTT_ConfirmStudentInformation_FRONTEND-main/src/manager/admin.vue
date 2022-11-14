@@ -37,11 +37,8 @@ export default {
             <div class="col-9">
                 <HeaderAdmin />
                 <div class="container-fluid">
-                    <!-- <div class=""> -->
-                    <div class="row p-0  ">
-
-                        <!-- <div class="  text-center  p-0"> -->
-                        <div class="container">
+                    <!-- <div class="row p-0  "> -->
+                        <div class="">
                             <div class=" row  mt-4 p-0">
                             </div>
                             <div class="text-center">
@@ -76,7 +73,7 @@ export default {
                             </div>
 
                         </div>
-                    </div>
+                    <!-- </div> -->
                     <!-- </div> -->
                     <!-- </div> -->
                 </div>

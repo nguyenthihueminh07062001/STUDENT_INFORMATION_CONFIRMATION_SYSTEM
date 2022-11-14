@@ -18,6 +18,7 @@ export default {
     data() {
         return {
             listThongTinDangKy: [],
+            filtered: []
         }
     },
     methods: {
@@ -25,11 +26,17 @@ export default {
         async retrieveStatus() {
             try {
                 this.listThongTinDangKy = await ThongTinDangKyService.getAll();
+                this.filtered = this.listThongTinDangKy;
                 console.log(this.listThongTinDangKy);
             } catch (error) {
                 console.log(error);
             }
         },
+        filteredDangKy(filter) {
+            this.filtered = this.listThongTinDangKy.filter(e => e.TrangThaiPheDuyet == filter)
+        },
+
+
 
     },
     mounted() {
@@ -57,21 +64,39 @@ export default {
                                 </h3>
                             </div>
                             <div class=" action m-0 p-0">
+
+                                <!-- <button type="button"
+                                    class="text-light bg-primary btn btn-addform border border-dark ml-2">
+                                    Tất cả
+                                </button>
                                 <button type="button"
                                     class="text-light bg-success btn btn-addform border border-dark ml-2"
-                                    @click="goToAddForm">
-                                    Đã duyệt <i class="fa-solid fa-check"></i>
-
+                                    @click="filteredDangKy('Đã duyệt')">
+                                    Đã duyệt
                                 </button>
                                 <button type="button"
-                                    class="btn btn-addform border border-dark ml-2 text-light bg-danger">
-                                    Đã hủy <i class="fa-solid fa-xmark"></i>
-                                </button>
+                                    class="btn btn-addform border border-dark ml-2 text-light bg-danger"
+                                    @click="filteredDangKy('Đã hủy')">
+                                    Đã hủy
+                                </button> -->
+
+
+                                <div class="dropdown">
+                                    <button class="btn btn-light text-dark border border-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa-solid fa-filter"></i> Lọc
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Tất cả</a>
+                                        <a class="dropdown-item" href="#" @click="filteredDangKy('Đã duyệt')">Đã duyệt</a>
+                                        <a class="dropdown-item" href="#" @click="filteredDangKy('Đã hủy')">Đã hủy</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="row pt-2 mt-2 ml-2">
+                            <!-- <div class="row pt-2 mt-2 ml-2">
                                 <b>Số lượng:</b>
 
-                            </div>
+                            </div> -->
 
                             <div class="row  mt-4">
 
@@ -91,7 +116,7 @@ export default {
                                         </tr>
                                     </thead>
                                     <tbody class="text-left">
-                                        <tr v-for="(thongTinDangKy, index) in this.listThongTinDangKy">
+                                        <tr v-for="(thongTinDangKy, index) in this.filtered">
                                             <th scope="row ">{{ index + 1 }}</th>
                                             <td>{{ thongTinDangKy.thongTin.MSSV }}</td>
                                             <td>{{ thongTinDangKy.thongTin.HoTen }}</td>
@@ -99,10 +124,7 @@ export default {
                                             <td class="text-primary ">{{ thongTinDangKy.TrangThaiPheDuyet }}</td>
                                             <td>{{ thongTinDangKy.NgayDangKy }}</td>
                                             <td>{{ thongTinDangKy.NgayDuyet }}</td>
-                                            <!-- <td class="row">
-                                                <a class=" text-dark text-center "><i
-                                                        class="fa-solid fa-paper-plane"></i></a>
-                                            </td> -->
+
                                         </tr>
 
                                     </tbody>

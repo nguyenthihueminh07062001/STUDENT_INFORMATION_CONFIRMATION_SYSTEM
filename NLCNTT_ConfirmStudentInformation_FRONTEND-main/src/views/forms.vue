@@ -115,10 +115,10 @@ export default {
           </tbody>
         </table>
         <div class="text-center">
-          <div v-for="(thongTinDangKy, index) in this.listThongTinDangKy">
+          <!-- <div v-for="(thongTinDangKy, index) in this.listThongTinDangKy">
             <p>Tổng số:{{ thongTinDangKy.SoLuong }}</p>
 
-          </div>
+          </div> -->
 
           <h6 class="text-left"> <b> Ghi chú:</b></h6>
           <textarea rows="3" cols="90"

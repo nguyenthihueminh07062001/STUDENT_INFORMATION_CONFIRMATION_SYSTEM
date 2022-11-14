@@ -1,4 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
+
+import { userAccStore } from "@/Store/userStore";
+
 import Home from "@/views/home.vue";
 import Login from "@/views/login.vue";
 import Notify from "@/views/notify.vue";
@@ -10,7 +13,6 @@ import Forms from "@/views/forms.vue";
 // import DCTT from "@/views/dieuChinhThongTin.vue";
 // import XNVV from "@/views/xacNhanVayVon.vue";
 
-
 //admin
 import ADMIN from "@/manager/admin.vue";
 //quan ly yeu cau
@@ -20,10 +22,9 @@ import QuanLyTrangThai from "@/manager/quanLyTrangThai.vue";
 // //quan ly bieu mau
 import QuanLyBieuMau from "@/manager/quanLyBieuMau.vue";
 // //dang ky xac nhan
- import DangKyXacNhan from "@/views/DangKyXacNhan.vue";
+import DangKyXacNhan from "@/views/DangKyXacNhan.vue";
 // //thong ke
- import ThongKe from "@/manager/ThongKe.vue";
-
+import ThongKe from "@/manager/thongKe.vue";
 
 //edit form
 import FormEdit from "@/manager/FormEdit.vue";
@@ -40,9 +41,9 @@ const routes = [
   {
     path: "/home",
     name: "Home",
-    components: {
-      default: Home,
-    },
+    component:
+       Home,
+    
   },
 
   {
@@ -120,6 +121,17 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  const userStore = userAccStore();
+  if (!userStore.user.TenTaiKhoan && to.name != "Login") {
+    next({
+      path: "/",
+      replace: true,
+    });
+  }
+  next();
 });
 
 export default router;

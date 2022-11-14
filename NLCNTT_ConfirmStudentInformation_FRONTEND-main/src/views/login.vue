@@ -125,7 +125,7 @@ h2 {
 }
 
 .frame-login {
-    margin-top: 4%;
+   
     background-color: rgb(249, 250, 251);
     box-shadow: 3px 5px 5px 5px #888888;
 }

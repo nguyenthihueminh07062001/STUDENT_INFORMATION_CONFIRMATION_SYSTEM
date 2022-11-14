@@ -11,7 +11,7 @@ export default {
         }
     },
     methods: {
-        async retrieveContacts() {
+        async retrieveRequire() {
             try {
                 this.listThongTinDangKy = await ThongTinDangKyService.getAll();
                 this.listThongTinDangKy = this.listThongTinDangKy.filter((e) => e.TrangThaiPheDuyet == "Chờ xác nhận")
@@ -25,11 +25,11 @@ export default {
             });
             data.NguoiDuyet = 'admin'
             await ThongTinDangKyService.update(data.id, data);
-            this.retrieveContacts();
+            this.retrieveRequire();
         }
     },
     mounted() {
-        this.retrieveContacts();
+        this.retrieveRequire();
     },
     components: {
         SidebarAdmin,
@@ -52,9 +52,21 @@ export default {
                         <div class="">
                             <div class=" row  mt-4 p-0">
                             </div>
-                            <div class="text-center">
+                            <div class="text-center mt-0">
                                 <h3 class="fw-bold text-dark text-center ">DANH SÁCH TẤT CẢ YÊU CẦU
                                 </h3>
+                            </div>
+                            <div class="mt-2 mb-2 action">
+                                <button type="button" class="text-light bg-primary btn btn-addform border border-dark ml-2" @click="goToAddForm">
+                                    <i class="fa-solid fa-plus"></i>
+                                    Thêm biểu mẫu
+                                </button>
+                                <button type="button" class="btn btn-addform border border-dark ml-2 text-light bg-danger">
+                                    Xuất file <i class="fa-solid fa-file-pdf"></i>
+                                </button>
+                                <button type="button" class="btn btn-addform  border border-dark ml-2 text-light bg-success">
+                                    Xuất file <i class="fa-sharp fa-solid fa-file-excel"></i>
+                                </button>
                             </div>
                             <div class="row  mt-4">
 
@@ -107,8 +119,9 @@ export default {
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Thông
-                                                                        tin đăng ký</h5>
+                                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                                        <b>Thông tin đăng ký</b>
+                                                                    </h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>

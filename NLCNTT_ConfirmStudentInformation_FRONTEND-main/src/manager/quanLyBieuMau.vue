@@ -98,7 +98,6 @@ export default {
             <div class="col-9">
                 <HeaderAdmin />
                 <div class="container-fluid">
-                    <!-- <div class="row p-0"> -->
 
                     <div class=" main-admin p-0">
                         <div class="container">
@@ -115,16 +114,13 @@ export default {
                                     Thêm biểu mẫu
                                 </button>
                                 <button type="button"
-                                    class="btn btn-addform border border-dark ml-2 text-light bg-warning">
+                                    class="btn btn-addform border border-dark ml-2 text-light bg-danger">
                                     Xuất file <i class="fa-solid fa-file-pdf"></i>
                                 </button>
                                 <button type="button"
                                     class="btn btn-addform  border border-dark ml-2 text-light bg-success">
                                     Xuất file <i class="fa-sharp fa-solid fa-file-excel"></i>
                                 </button>
-
-
-
                             </div>
 
                             <div class="row  mt-4">

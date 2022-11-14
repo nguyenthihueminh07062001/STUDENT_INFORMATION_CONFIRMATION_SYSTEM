@@ -1,5 +1,5 @@
-<template>
-    <div class="col-3 bg-color-sidebars text-light sidebars">
+<template >
+    <div class="col-3 bg-color-sidebars text-light sidebars ">
         <div class=" pt-4">
             <h3>MENU</h3>
         </div>
