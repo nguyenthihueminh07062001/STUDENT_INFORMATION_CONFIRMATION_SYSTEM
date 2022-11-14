@@ -204,12 +204,6 @@ export default {
                   </a>
                     <router-link class=" btn btn-primary text-light" :to="{ name: 'Forms' }">Hủy
                     </router-link>
-                 
-                
-                  <!-- <a class="btn btn-primary text-light" href="#" role="button">
-                    <router-link class=" text-light" :to="{ name: 'Forms' }">Hủy
-                    </router-link>
-                  </a> -->
                 </div>
               </td>
 

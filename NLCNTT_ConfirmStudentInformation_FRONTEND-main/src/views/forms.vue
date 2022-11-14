@@ -26,7 +26,7 @@ export default {
 
     }
   },
-  
+
 
   methods: {
 
@@ -113,10 +113,13 @@ export default {
               <td> </td>
             </tr>
           </tbody>
-         
-
         </table>
         <div class="text-center">
+          <div v-for="(thongTinDangKy, index) in this.listThongTinDangKy">
+            <p>Tổng số:{{ thongTinDangKy.SoLuong }}</p>
+
+          </div>
+
           <h6 class="text-left"> <b> Ghi chú:</b></h6>
           <textarea rows="3" cols="90"
             class="px-2">- Sinh viên đăng ký giấy xác nhận chờ nhận email phản hồi sau 02 ngày kể từ ngày đăng ký - trừ thứ 7, chủ nhật và ngày nghỉ lễ.</textarea>

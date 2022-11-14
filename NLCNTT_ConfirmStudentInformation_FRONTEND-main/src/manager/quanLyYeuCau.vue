@@ -2,7 +2,7 @@
 import HeaderAdmin from "../components/HeaderAdmin.vue";
 import ThongTinDangKyService from "../services/thongtindangky.service";
 import SidebarAdmin from "../components/SidebarAdmin.vue";
-import { divide } from "lodash";
+//import { divide } from "lodash";
 export default {
     data() {
         return {
@@ -34,7 +34,7 @@ export default {
     components: {
         SidebarAdmin,
         HeaderAdmin,
-        divide
+        // divide
     },
 }
 </script>
@@ -130,8 +130,8 @@ export default {
                                                                             <div class="col-5">Email:
                                                                             </div>
                                                                             <div class="col-7">{{
-                                                                                this.selected.thongTin.Email
-                                                                                }}</div>
+                                                                                    this.selected.thongTin.Email
+                                                                            }}</div>
                                                                             <div class="col-5">Ngày sinh :</div>
                                                                             <div class="col-7">{{
                                                                                     this.selected.thongTin.NgaySinh
@@ -146,23 +146,24 @@ export default {
                                                                             <div class="col-7">{{
                                                                                     this.selected.thongTin.SoCMND
                                                                             }} </div>
-                                                                           
-                                                                            <div class="col-5">Hộ khẩu thường trú :</div>
+
+                                                                            <div class="col-5">Hộ khẩu thường trú :
+                                                                            </div>
                                                                             <div class="col-7">{{
-                                                                                this.selected.thongTin.DiaChi
-                                                                                }} </div>
-                                                                                <div class="col-5">Mã lớp :</div>
-                                                                                <div class="col-7">{{
+                                                                                    this.selected.thongTin.DiaChi
+                                                                            }} </div>
+                                                                            <div class="col-5">Mã lớp :</div>
+                                                                            <div class="col-7">{{
                                                                                     this.selected.thongTin.MaLop
-                                                                                    }} </div>
-                                                                                <div class="col-5">Ngành học :</div>
-                                                                                <div class="col-7">{{
+                                                                            }} </div>
+                                                                            <div class="col-5">Ngành học :</div>
+                                                                            <div class="col-7">{{
                                                                                     this.selected.thongTin.TenNganh
-                                                                                    }} </div>
-                                                                                    <div class="col-5">Khoa :</div>
-                                                                                    <div class="col-7">{{
-                                                                                        this.selected.thongTin.TenKhoa
-                                                                                        }} </div>
+                                                                            }} </div>
+                                                                            <div class="col-5">Khoa :</div>
+                                                                            <div class="col-7">{{
+                                                                                    this.selected.thongTin.TenKhoa
+                                                                            }} </div>
                                                                             <br>
                                                                         </div>
                                                                     </div>

@@ -10,6 +10,7 @@ class ThongTinDangKyService {
       TrangThaiPheDuyet: payload.TrangThaiPheDuyet ?? "Chờ xác nhận",
       NguoiDuyet: payload.NguoiDuyet ?? null,
       GhiChu: payload.GhiChu,
+      SoLuong: payload.SoLuong,
     };
     // remove undifined filds
     Object.keys(thongTinDangKy).forEach(
@@ -54,7 +55,8 @@ class ThongTinDangKyService {
       { $unwind: "$allThongTin" },
     ]);
     return await resultAll.toArray();
-  }npm 
+  }
+  npm;
   // async getAllOfThongTinBieuMau(){
   //   const resultAll = await this.ThongTinBieuMau.aggregate([
   //     {
