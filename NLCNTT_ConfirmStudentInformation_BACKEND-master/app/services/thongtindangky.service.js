@@ -56,29 +56,7 @@ class ThongTinDangKyService {
     ]);
     return await resultAll.toArray();
   }
-  npm;
-  // async getAllOfThongTinBieuMau(){
-  //   const resultAll = await this.ThongTinBieuMau.aggregate([
-  //     {
-  //       $lookup: {
-  //         from: "thongTin",
-  //         localField: "MaBieuMau",
-
-  //         foreignField: "MaBieuMau",
-
-  //         as: "allThongTin",
-  //       },
-  //     },
-  //   ]);
-  //   return await resultAll.toArray();
-  // }
-
-  // async findByName(name){
-  //     return await this.find({
-  //         name: {$regex: new RegExp(name), $options: "i"},
-  //     });
-  // }
-
+  // npm;
   async create(payload) {
     console.log(payload);
     const data = this.extractThongTinDangKyData(payload);

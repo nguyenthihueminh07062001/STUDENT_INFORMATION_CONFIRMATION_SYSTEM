@@ -1,10 +1,7 @@
 
 
 <script>
-// import * as yup from "yup";
-// import { Form, Field, ErrorMessage } from "vee-validate";
 import HeaderAdmin from "../components/HeaderAdmin.vue";
-import BieuMauService from "../services/bieuMau.service";
 import SidebarAdmin from "../components/SidebarAdmin.vue";
 import ThongTinDangKyService from "../services/thongtindangky.service.js";
 
@@ -12,7 +9,6 @@ export default {
     components: {
         HeaderAdmin,
         SidebarAdmin,
-        // BieuMauService,
 
     },
     data() {
@@ -35,9 +31,6 @@ export default {
         filteredDangKy(filter) {
             this.filtered = this.listThongTinDangKy.filter(e => e.TrangThaiPheDuyet == filter)
         },
-
-
-
     },
     mounted() {
         this.retrieveStatus();
@@ -64,31 +57,17 @@ export default {
                                 </h3>
                             </div>
                             <div class=" action m-0 p-0">
-
-                                <!-- <button type="button"
-                                    class="text-light bg-primary btn btn-addform border border-dark ml-2">
-                                    Tất cả
-                                </button>
-                                <button type="button"
-                                    class="text-light bg-success btn btn-addform border border-dark ml-2"
-                                    @click="filteredDangKy('Đã duyệt')">
-                                    Đã duyệt
-                                </button>
-                                <button type="button"
-                                    class="btn btn-addform border border-dark ml-2 text-light bg-danger"
-                                    @click="filteredDangKy('Đã hủy')">
-                                    Đã hủy
-                                </button> -->
-
-
                                 <div class="dropdown">
-                                    <button class="btn btn-light text-dark border border-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    <button class="btn btn-light text-dark border border-dark dropdown-toggle"
+                                        type="button" id="dropdownMenuButton" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
                                         <i class="fa-solid fa-filter"></i> Lọc
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
                                         <a class="dropdown-item" href="#">Tất cả</a>
-                                        <a class="dropdown-item" href="#" @click="filteredDangKy('Đã duyệt')">Đã duyệt</a>
+                                        <a class="dropdown-item" href="#" @click="filteredDangKy('Đã duyệt')">Đã
+                                            duyệt</a>
                                         <a class="dropdown-item" href="#" @click="filteredDangKy('Đã hủy')">Đã hủy</a>
                                     </div>
                                 </div>
@@ -107,11 +86,9 @@ export default {
                                             <th scope="col">MSSV</th>
                                             <TH scope="col">Họ Tên</TH>
                                             <th scope="col">Tên Biểu mẫu</th>
-                                            <!-- <TH scope="col">Email</TH> -->
                                             <th scope="col">Trạng thái phê duyệt</th>
                                             <th scope="col">Ngày đăng ký</th>
                                             <th scope="col">Ngày duyệt</th>
-                                            <!-- <th scope="col">Tác vụ</th> -->
 
                                         </tr>
                                     </thead>
