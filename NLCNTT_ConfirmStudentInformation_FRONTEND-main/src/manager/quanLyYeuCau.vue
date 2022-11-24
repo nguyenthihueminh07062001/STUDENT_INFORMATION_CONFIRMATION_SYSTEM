@@ -57,14 +57,16 @@ export default {
                                 </h3>
                             </div>
                             <div class="mt-2 mb-2 action">
-                                <button type="button" class="text-light bg-primary btn btn-addform border border-dark ml-2" @click="goToAddForm">
+                                <!-- <button type="button" class="text-light bg-primary btn btn-addform border border-dark ml-2" @click="goToAddForm">
                                     <i class="fa-solid fa-plus"></i>
                                     Thêm biểu mẫu
-                                </button>
-                                <button type="button" class="btn btn-addform border border-dark ml-2 text-light bg-danger">
+                                </button> -->
+                                <button type="button"
+                                    class="btn btn-addform border border-dark ml-2 text-light bg-danger">
                                     Xuất file <i class="fa-solid fa-file-pdf"></i>
                                 </button>
-                                <button type="button" class="btn btn-addform  border border-dark ml-2 text-light bg-success">
+                                <button type="button"
+                                    class="btn btn-addform  border border-dark ml-2 text-light bg-success">
                                     Xuất file <i class="fa-sharp fa-solid fa-file-excel"></i>
                                 </button>
                             </div>
@@ -159,6 +161,10 @@ export default {
                                                                             <div class="col-7">{{
                                                                                     this.selected.thongTin.SoCMND
                                                                             }} </div>
+                                                                            <div class="col-5">Trạng thái sinh viên:</div>
+                                                                            <div class="col-7">{{
+                                                                                this.selected.thongTin.TrangThaiSinhVien
+                                                                                }} </div>
 
                                                                             <div class="col-5">Hộ khẩu thường trú :
                                                                             </div>

@@ -65,6 +65,7 @@ class ThongTinDangKyService {
     return result.value;
   }
   async update(id, payload) {
+    console.log(234567);
     console.log(id);
     const filter = {
       _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
@@ -77,6 +78,50 @@ class ThongTinDangKyService {
       { returnDocument: "after" }
     );
     console.log(result.value);
+
+    const sv = await this.SinhVien.findOne({
+      MSSV: result.value.MSSV,
+    });
+    console.log(sv);
+    const nodemailer = require("nodemailer");
+    var transporter = nodemailer.createTransport({
+      // config mail server
+      service: "Gmail",
+      auth: {
+        user: "huong280517@gmail.com",
+        pass: "fwspvciwqpwngxrs",
+      },
+    });
+    if (result.value.TrangThaiPheDuyet == "Đã duyệt") {
+      var mainOptions = {
+        from: "CICT",
+        to: sv.Email,
+        subject: "Phản hồi form đăng ký",
+        text: "You recieved message from CICT",
+        html:
+          "<h6>Xin chào" +
+          sv.HoTen +
+          "!</h6><br/><p>Chúng tôi đã xem thông tin đăng ký từ bạn, Chúng tôi sẽ sớm sắp lịch và thông báo cho bạn sau</p>",
+      };
+    } else {
+      var mainOptions = {
+        from: "CICT",
+        to: sv.Email,
+        subject: "Phản hồi form đăng ký",
+        text: "You recieved message from CICT",
+        html:
+          "<h1>Xin chào " +
+          sv.HoTen +
+          "!</h1><br/><p>Yêu cầu đăng ký của bạn đã bị hủy</p>",
+      };
+    }
+    transporter.sendMail(mainOptions, function (err, info) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Message sent: " + info.response);
+      }
+    });
     return result.value;
   }
 

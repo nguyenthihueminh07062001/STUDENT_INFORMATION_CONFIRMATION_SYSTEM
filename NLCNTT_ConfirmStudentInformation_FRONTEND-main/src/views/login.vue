@@ -28,7 +28,8 @@ export default {
                         this.$router.push({ name: "ADMIN" });
                     }
 
-                    else { this.$router.push({ name: "Forms" }); }
+                    //  else { this.$router.push({ name: "Forms" }); }
+                    else { this.$router.push({ name: "Home" }); }
                 } else {
                     this.error = true
                 }
@@ -125,11 +126,12 @@ h2 {
 }
 
 .frame-login {
-   
+
     background-color: rgb(249, 250, 251);
     box-shadow: 3px 5px 5px 5px #888888;
 }
-.login-title{
+
+.login-title {
     padding-top: 5%;
 }
 </style>

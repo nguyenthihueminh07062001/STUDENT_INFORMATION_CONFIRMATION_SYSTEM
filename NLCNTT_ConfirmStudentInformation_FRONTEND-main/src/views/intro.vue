@@ -114,7 +114,7 @@ export default {
 
     <!-- final -->
     <div class="container ">
-        <h2 class="text-center">Một số hình ảnh minh họa</h2>
+        <h2 class="text-center mb-2">Một số hình ảnh minh họa</h2>
         <div class="row">
             <div class="col">
                 <img src="../assets/images/1.jpg" alt="Avatar" class="image" style="width:100%">

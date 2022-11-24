@@ -11,12 +11,11 @@ export default {
 </script>
 <template>
     <HeaderPublic />
-    <div class="d-flex justify-content-center">
+    <!-- <div class="d-flex justify-content-center">
         <div class="m-1 p-2">
             <div class="container">
                 <h3 class="text-center">Thông báo</h3>
                 <div>
-                    <!-- Nghĩa vụ quân sự -->
                     <p>
                         <a class="link text-dark" data-toggle="collapse" href="#one" role="" aria-expanded="false"
                             aria-controls="collapseExample">
@@ -38,15 +37,11 @@ export default {
                 </div>
 
                 <div>
-                    <!-- Tư vấn tâm lý -->
                     <p>
                         <a class="link text-dark" data-toggle="collapse" href="#two" role="" aria-expanded="false"
                             aria-controls="collapseExample">
                             Danh sác sinh viên đã được xác nhận tư vấn tâm lý, sức khỏe
                         </a>
-                        <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                                Button with data-target
-                                            </button> -->
                     </p>
                     <div class="collapse" id="two">
                         <div class="y">
@@ -63,15 +58,11 @@ export default {
                 </div>
 
                 <div>
-                    <!-- Bảo hiểm y tế -->
                     <p>
                         <a class="link text-dark" data-toggle="collapse" href="#three" role="" aria-expanded="false"
                             aria-controls="collapseExample">
                             Danh sác sinh viên đã được xác nhận có bảo hiểm y tế ở địa phương
                         </a>
-                        <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                                Button with data-target
-                                            </button> -->
                     </p>
                     <div class="collapse" id="three">
                         <div class="y">
@@ -86,18 +77,52 @@ export default {
                     </div>
 
                 </div>
-                <!-- <div>
-                ADMIN
-                <a href="#" class=" m-0">
-                    <router-link class="nav-link text-primary" :to="{name:'ADMIN' }">ADMIN
-                    </router-link>
-                </a>
-            </div>
-             -->
-
             </div>
         </div>
-    </div>
+    </div> -->
+    <main>
+        <div class="d-flex justify-content-center container ">
+
+            <table class="table table-hover table-bordered col-6 ">
+                <thead>
+                    <tr>
+                        <th colspan="4 " class="text-light bg-form">Tin mới nhất</th>
+                        <!-- <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th> -->
+                    </tr>
+                </thead>
+                <tbody class="">
+                    <tr>
+                        <th scope="row"> 1</th>
+                        <td colspan="3">Thông báo học bổng Cathay Life Insurance 2022</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row"> 2</th>
+                        <td colspan="3">Thông báo phát thẻ Bảo hiểm y tế và Bảo hiểm tai nạn cho sinh viên khóa 48</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"> 3</th>
+                        <td colspan="3">Thông báo học bổng "Lương Định Của" năm học 2022 - 2023</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"> 4</th>
+                        <td colspan="3">Quyết định hỗ trợ chi phí học tập học đợt ngày 07/11/2022</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"> 5</th>
+                        <td colspan="3">Quyết định trợ cấp xã hội cho sinh viên đợt 15/11/2022</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+    </main>
     <PublicFooters />
 
 </template>
@@ -109,5 +134,9 @@ li {
 
 .link {
     text-decoration: underline;
+}
+
+.bg-form {
+    background-color: #3456b4;
 }
 </style>
