@@ -97,22 +97,22 @@ class ThongTinDangKyService {
         from: "CICT",
         to: sv.Email,
         subject: "Phản hồi form đăng ký",
-        text: "You recieved message from CICT",
+        text: "Bạn đã nhận tin nhắn đến từ CICT",
         html:
-          "<h6>Xin chào" +
+          "<h4>Xin chào " +
           sv.HoTen +
-          "!</h6><br/><p>Chúng tôi đã xem thông tin đăng ký từ bạn, Chúng tôi sẽ sớm sắp lịch và thông báo cho bạn sau</p>",
+          "!</h6><br/><p>Yêu cầu đăng ký của bạn đã được xác nhận</p>",
       };
     } else {
       var mainOptions = {
         from: "CICT",
         to: sv.Email,
         subject: "Phản hồi form đăng ký",
-        text: "You recieved message from CICT",
+        text: "Bạn đã nhận tin nhắn đến từ CICT",
         html:
-          "<h1>Xin chào " +
+          "<h4>Xin chào " + 
           sv.HoTen +
-          "!</h1><br/><p>Yêu cầu đăng ký của bạn đã bị hủy</p>",
+          "!</h6><br/><p>Yêu cầu đăng ký của bạn đã bị hủy</p>",
       };
     }
     transporter.sendMail(mainOptions, function (err, info) {

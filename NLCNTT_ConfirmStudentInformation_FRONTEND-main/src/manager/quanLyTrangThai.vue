@@ -64,7 +64,7 @@ export default {
                                             <th scope="col">Trạng thái phê duyệt</th>
                                             <th scope="col">Ngày đăng ký</th>
                                             <th scope="col">Ngày duyệt</th>
-                                            <th scope="col">Gửi mail</th>
+                                            <th scope="col"> </th>
 
                                         </tr>
                                     </thead>
@@ -84,9 +84,9 @@ export default {
                                                         data-target="#exampleModal"
                                                         @click="this.selected = thongTinDangKy"></i>
                                                 </a>
-                                                <a class=" text-dark text-center ">
+                                                <!-- <a class=" text-dark text-center ">
                                                     <i class="fa-solid fa-paper-plane "></i>
-                                                </a>
+                                                </a> -->
                                                 <div>
                                                     <div v-if="this.selected != null" class="modal fade"
                                                         id="exampleModal" tabindex="-1" role="dialog"
