@@ -146,53 +146,29 @@
 
     },
     {
-        "MSSV":"B1912156",
-        "HoTen":"Trương Anh Trung",
-        "Email":"trungb1912156@student.ctu.edu.vn",
+        "MSSV":"B1910467",
+        "HoTen":"Nguyễn Quốc Trạng",
+        "Email":"trangb191467@student.ctu.edu.vn",
         "SoDienThoai":"0908681244",
         "NgaySinh":"27/06/2001",
         "SoCMND":"331882346",
         "DanToc":"Kinh",
         "GioiTinh":"Nam",
-        "DiaChi":"Trà Vinh",
-        "MaLop":"DI19V7A1",
+        "DiaChi":"Cà Mau",
+        "MaLop":"DI19V7A8",
         "MaNganh":"DI",
         "TenNganh":"Công nghệ thông tin",
         "TenKhoa":"Công nghệ thông tin và truyền thông",
         "KhoaHoc":"K45",
         "HeDaoTao":"chính quy",
-        "TrangThaiSinhVien":"Bị đuổi học",
+        "TrangThaiSinhVien":"Đang học",
         "MaBaoHiemYTe":"SV4928622257576",
         "NgaySuDungBH":"01/09/2019",
         "NgayHetHanBH":"01/04/2023",
         "NoiDangKyKhamBH":"Bệnh viện quân y 121",
         "LuotXacNhan":"1"
 
-    },
-    {
-        "MSSV":"B1912150",
-        "HoTen":"Ngô Gia Việt",
-        "Email":"vietb19121500@student.ctu.edu.vn",
-        "SoDienThoai":"0908681242",
-        "NgaySinh":"7/1/2001",
-        "SoCMND":"331882123",
-        "DanToc":"Thiểu số",
-        "GioiTinh":"Nam",
-        "DiaChi":"An Giang",
-        "MaLop":"DI19V7A2",
-        "MaNganh":"DI",
-        "TenNganh":"Công nghệ thông tin",
-        "TenKhoa":"Công nghệ thông tin và truyền thông",
-        "Khoa":"K45",
-        "HeDaoTao":"chính quy",
-        "TrangThaiSinhVien":"Tạm nghỉ học",
-        "MaBaoHiemYTe":"SV4928622257576",
-        "NgaySuDungBH":"01/09/2019",
-        "NgayHetHanBH":"01/04/2023",
-        "NoiDangKyKham":"Bệnh viện quân y 121",
-        "LuotXacNhan":"1"
-
     }
-
+   
 
 ]

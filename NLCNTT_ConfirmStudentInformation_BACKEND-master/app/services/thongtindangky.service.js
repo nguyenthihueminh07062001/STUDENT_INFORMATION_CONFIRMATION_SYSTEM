@@ -96,23 +96,30 @@ class ThongTinDangKyService {
       var mainOptions = {
         from: "CICT",
         to: sv.Email,
-        subject: "Phản hồi form đăng ký",
+        subject: "PHẢN HỒI KẾT QUẢ ĐĂNG KÝ",
         text: "Bạn đã nhận tin nhắn đến từ CICT",
         html:
-          "<h4>Xin chào " +
+          // "<h4>Xin chào " +
+          // sv.HoTen +
+          // "!</h6><br/><p>Yêu cầu đăng ký của bạn đã được duyệt</p>",
+
+          " <b>Xin chào </b>" +
           sv.HoTen +
-          "!</h6><br/><p>Yêu cầu đăng ký của bạn đã được xác nhận</p>",
+          "<br/> <b>YÊU CẦU ĐĂNG KÝ CỦA BẠN ĐÃ ĐƯỢC PHÊ DUYỆT</b>" +
+          "<p> Vui lòng đến văn phòng đoàn vào thứ 7 để nhận phiếu thông tin đăng ký.</p>" +
+          "<small> Trân trọng cảm ơn </small>,",
       };
     } else {
       var mainOptions = {
         from: "CICT",
         to: sv.Email,
-        subject: "Phản hồi form đăng ký",
+        subject: "PHẢN HỒI KẾT QUẢ ĐĂNG KÝ",
         text: "Bạn đã nhận tin nhắn đến từ CICT",
         html:
-          "<h4>Xin chào " + 
+          " <b>Xin chào </b>" +
           sv.HoTen +
-          "!</h6><br/><p>Yêu cầu đăng ký của bạn đã bị hủy</p>",
+          "<br/> <b>YÊU CẦU ĐĂNG KÝ CỦA BẠN ĐÃ BỊ HỦY</b>" +
+          "<br/> <small> Trân trọng cảm ơn </small>,",
       };
     }
     transporter.sendMail(mainOptions, function (err, info) {
