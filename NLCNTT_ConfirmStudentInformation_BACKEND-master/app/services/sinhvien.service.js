@@ -3,6 +3,7 @@ const { ObjectId } = require("mongodb");
 class SinhVienService {
   extractSinhVienData(payload) {
     const sinhvien = {
+      TenTaiKhoan: payload.TenTaiKhoan,
       MSSV: payload.MSSV,
       HoTen: payload.HoTen,
       Email: payload.Email,
@@ -24,7 +25,7 @@ class SinhVienService {
       NgaySuDungBH: payload.NgaySuDungBH,
       NgayHetHanBH: payload.NgayHetHanBH,
       NoiDangKyKhamBH: payload.NoiDangKyKhamBH,
-      LuotXacNhan: payload.LuotXacNhan,
+      //LuotXacNhan: payload.LuotXacNhan,
       GioiTinh: payload.GioiTinh,
     };
     // remove undifined filds

@@ -2,18 +2,20 @@
 <script>
 import InputSearch from '../components/InputSearch.vue'
 import BieuMauService from '../services/bieuMau.service'
+import SinhVienService from '../services/sinhvien.service'
 import { userAccStore } from "@/Store/userStore";
 export default {
     components: {
         InputSearch,
         BieuMauService,
+        SinhVienService,
 
     },
     data() {
         return {
             bieuMau: [],
             activeIndex: -1,
-            searchText: "",
+            searchText: ''
         };
     },
     watch: {
@@ -71,15 +73,30 @@ export default {
             this.retrieveBieuMau();
             this.activeIndex = -1;
         },
+        async getAll() {
+            this.allSinhVien = await SinhVienService.getAll();
+            console.log(this.allSinhVien);
+        },
+        search() {
+            this.getAll();
+            setTimeout(
+                () => {
+                    if (this.this.searchText != '') {
+                        this.allSinhVien = this.allSinhVien.filter(e => e.HoTen.includes(this.searchText));
+                    }
+                }, 100
+            )
+        }
     },
     mounted() {
-        this.refreshList();
+        this.getAll();
     },
 }
 </script>
 <template>
 
     <header>
+
         <!-- <div>
             <div class="pre-nav row text-center pre-nav m-0 " style="padding-top: 15px;">
                 <div class="col-4">
@@ -113,6 +130,12 @@ export default {
                 </div>
             </div>
         </div> -->
+        <!-- <form role="search" class="search-form justify-content-end" action="/search_admin" name="search-form">
+            <label>
+                <input class="form-control justify-content-en" type="search" placeholder="Search"
+                    v-model="this.searchText" @input="this.search()" aria-label="Search" name="search_admin">
+            </label>
+        </form> -->
         <div>
             <div class="pre-nav row text-center pre-nav m-0 " style="padding-top: 15px;">
                 <div class="col-3">

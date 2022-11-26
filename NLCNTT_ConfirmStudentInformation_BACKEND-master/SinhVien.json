@@ -1,6 +1,7 @@
 [
     
     {
+        "TenTaiKhoan":"B1910411",
         "MSSV":"B1910411",
         "HoTen":"Nguyễn Thị Huế Minh",
         "Email":"minhb1910411@student.ctu.edu.vn",
@@ -20,12 +21,13 @@
         "MaBaoHiemYTe":"SV4928622257576",
         "NgaySuDungBH":"01/09/2019",
         "NgayHetHanBH":"01/04/2023",
-        "NoiDangKyKhamBH":"Bệnh viện quân y 121",
-        "LuotXacNhan":"1"
+        "NoiDangKyKhamBH":"Bệnh viện quân y 121"
+         
 
     },
 
     {
+        "TenTaiKhoan":"B1910408",
         "MSSV":"B1910408",
         "HoTen":"Lê Thị Yến Lụa",
         "Email":"luab1910408@student.ctu.edu.vn",
@@ -45,11 +47,12 @@
         "MaBaoHiemYTe":"SV4928622257576",
         "NgaySuDungBH":"01/09/2019",
         "NgayHetHanBH":"01/04/2023",
-        "NoiDangKyKhamBH":"Bệnh viện quân y 121",
-        "LuotXacNhan":"1"
+        "NoiDangKyKhamBH":"Bệnh viện quân y 121"
+         
 
     },
     {
+        "TenTaiKhoan":"B1910402",
         "MSSV":"B1910402",
         "HoTen":"Trần Thị Kim Linh",
         "Email":"linhb1910402@student.ctu.edu.vn",
@@ -69,11 +72,11 @@
         "MaBaoHiemYTe":"SV4928622257576",
         "NgaySuDungBH":"01/09/2019",
         "NgayHetHanBH":"01/04/2023",
-        "NoiDangKyKhamBH":"Bệnh viện quân y 121",
-        "LuotXacNhan":"2"
+        "NoiDangKyKhamBH":"Bệnh viện quân y 121"
 
     },
     {
+        "TenTaiKhoan":"B1910468",
         "MSSV":"B1910468",
         "HoTen":"Nguyễn Linh Trâm",
         "Email":"tramb1910468@student.ctu.edu.vn",
@@ -93,11 +96,11 @@
         "MaBaoHiemYTe":"SV4928622257576",
         "NgaySuDungBH":"01/09/2019",
         "NgayHetHanBH":"01/04/2023",
-        "NoiDangKyKhamBH":"Bệnh viện quân y 121",
-        "LuotXacNhan":"2"
+        "NoiDangKyKhamBH":"Bệnh viện quân y 121"
 
     },
     {
+        "TenTaiKhoan":"B1910317",
         "MSSV":"B1910317",
         "HoTen":"Lê Hồng Ngọc Trân",
         "Email":"tranb1910317@student.ctu.edu.vn",
@@ -117,11 +120,12 @@
         "MaBaoHiemYTe":"SV4928622257576",
         "NgaySuDungBH":"01/09/2019",
         "NgayHetHanBH":"01/04/2023",
-        "NoiDangKyKhamBH":"Bệnh viện quân y 121",
-        "LuotXacNhan":"1"
+        "NoiDangKyKhamBH":"Bệnh viện quân y 121"
+         
 
     },
     {
+        "TenTaiKhoan":"B1910418",
         "MSSV":"B1910418",
         "HoTen":"Phạm Thị Thúy Ngọc",
         "Email":"ngocb1910418@student.ctu.edu.vn",
@@ -141,11 +145,12 @@
         "MaBaoHiemYTe":"SV4928622257576",
         "NgaySuDungBH":"01/09/2019",
         "NgayHetHanBH":"01/04/2023",
-        "NoiDangKyKhamBH":"Bệnh viện quân y 121",
-        "LuotXacNhan":"1"
+        "NoiDangKyKhamBH":"Bệnh viện quân y 121"
+         
 
     },
     {
+        "TenTaiKhoan":"B1910467",
         "MSSV":"B1910467",
         "HoTen":"Nguyễn Quốc Trạng",
         "Email":"trangb191467@student.ctu.edu.vn",
@@ -165,8 +170,8 @@
         "MaBaoHiemYTe":"SV4928622257576",
         "NgaySuDungBH":"01/09/2019",
         "NgayHetHanBH":"01/04/2023",
-        "NoiDangKyKhamBH":"Bệnh viện quân y 121",
-        "LuotXacNhan":"1"
+        "NoiDangKyKhamBH":"Bệnh viện quân y 121"
+         
 
     }
    
