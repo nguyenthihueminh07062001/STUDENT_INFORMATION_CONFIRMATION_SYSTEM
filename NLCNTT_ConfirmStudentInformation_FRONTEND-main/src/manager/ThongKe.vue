@@ -14,7 +14,8 @@ export default {
     data() {
         return {
             listThongTinDangKy: [],
-            filtered: []
+            filtered: [],
+            thongke: {}
         }
     },
     methods: {
@@ -23,6 +24,10 @@ export default {
             try {
                 this.listThongTinDangKy = await ThongTinDangKyService.getAll();
                 this.filtered = this.listThongTinDangKy;
+                this.thongke.all = this.listThongTinDangKy.length;
+                this.thongke.daDuyet = this.listThongTinDangKy.filter(e => e.TrangThaiPheDuyet == 'Đã duyệt').length;
+                this.thongke.daHuy = this.listThongTinDangKy.filter(e => e.TrangThaiPheDuyet == 'Đã hủy').length;
+                this.thongke.choXacNhan = this.listThongTinDangKy.filter(e => e.TrangThaiPheDuyet == 'Chờ xác nhận').length;
                 console.log(this.listThongTinDangKy);
             } catch (error) {
                 console.log(error);
@@ -72,10 +77,45 @@ export default {
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="row pt-2 mt-2 ml-2">
-                                <b>Số lượng:</b>
-
+                            <!-- <div>
+                                <p>Tất cả: {{ this.thongke.all }}</p>
+                                <p>Chờ xác nhận: {{ this.thongke.choXacNhan }}</p>
+                                <p>Đã duyệt: {{ this.thongke.daDuyet }}</p>
+                                <p>Đã hủy: {{ this.thongke.daHuy }}</p>
                             </div> -->
+
+                            <div class="container justify-content-center">
+                                <p></p>
+                                <div class="row col-6  mt-4">
+                                    <table class=" text-center table table-bordered">
+                                        <thead class="bg-light ">
+                                            <tr class="text-dark">
+                                                <!-- <th scope="col ">STT</th> -->
+                                                <th scope="col">Tất cả</th>
+                                                <TH scope="col">Chờ xác nhận</TH>
+                                                <th scope="col">Đã duyệt</th>
+                                                <th scope="col">Đã hủy</th>
+                                
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-center">
+                                            <tr>
+                                                <!-- <td> </td> -->
+                                                <td> {{ this.thongke.all }}</td>
+                                                <td> {{ this.thongke.choXacNhan }}</td>
+                                                <td> {{ this.thongke.daDuyet }}</td>
+                                                <td> {{ this.thongke.daHuy }}</td>
+                                
+                                            </tr>
+                                
+                                        </tbody>
+                                    </table>
+                                
+                                </div>
+
+                            </div>
+                            
+
 
                             <div class="row  mt-4">
 
@@ -108,6 +148,8 @@ export default {
                                 </table>
 
                             </div>
+
+
 
                         </div>
                     </div>
