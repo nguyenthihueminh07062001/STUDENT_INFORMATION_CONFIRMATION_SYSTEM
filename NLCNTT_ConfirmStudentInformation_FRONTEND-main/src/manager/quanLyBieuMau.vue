@@ -1,8 +1,6 @@
 
 
 <script>
-// import * as yup from "yup";
-// import { Form, Field, ErrorMessage } from "vee-validate";
 import HeaderAdmin from "../components/HeaderAdmin.vue";
 import BieuMauService from "../services/bieuMau.service";
 import SidebarAdmin from "../components/SidebarAdmin.vue";
@@ -12,10 +10,7 @@ export default {
         HeaderAdmin,
         SidebarAdmin,
         BieuMauService,
-        // Form,
-        // FormAdd,
-        // Field,
-        // ErrorMessage,
+
 
     },
     props: {
@@ -23,7 +18,6 @@ export default {
     },
     data() {
         return {
-            // bieuMauLocal: this.bieuMau,
             listBieuMau: [],
             activeIndex: -1,
             bieuMau: [],
@@ -178,10 +172,11 @@ export default {
 
 .title-manager {
     margin-bottom: 10%;
-    
+
 }
-.action{
-    padding-top:3%;
+
+.action {
+    padding-top: 3%;
     padding-bottom: 1%;
 }
 </style>

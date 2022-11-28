@@ -60,7 +60,6 @@ export default {
                                             <th scope="col">MSSV</th>
                                             <TH scope="col">Họ Tên</TH>
                                             <th scope="col">Tên Biểu mẫu</th>
-                                            <!-- <TH scope="col">Email</TH> -->
                                             <th scope="col">Trạng thái phê duyệt</th>
                                             <th scope="col">Ngày đăng ký</th>
                                             <th scope="col">Ngày duyệt</th>
@@ -84,9 +83,7 @@ export default {
                                                         data-target="#exampleModal"
                                                         @click="this.selected = thongTinDangKy"></i>
                                                 </a>
-                                                <!-- <a class=" text-dark text-center ">
-                                                    <i class="fa-solid fa-paper-plane "></i>
-                                                </a> -->
+
                                                 <div>
                                                     <div v-if="this.selected != null" class="modal fade"
                                                         id="exampleModal" tabindex="-1" role="dialog"
@@ -130,10 +127,11 @@ export default {
                                                                                     this.selected.thongTin.GioiTinh
                                                                             }}
                                                                             </div>
-                                                                            <div class="col-5">Trạng thái sinh viên:</div>
+                                                                            <div class="col-5">Trạng thái sinh viên:
+                                                                            </div>
                                                                             <div class="col-7">{{
-                                                                                this.selected.thongTin.TrangThaiSinhVien
-                                                                                }} </div>
+                                                                                    this.selected.thongTin.TrangThaiSinhVien
+                                                                            }} </div>
                                                                             <div class="col-5">Số chứng minh :</div>
                                                                             <div class="col-7">{{
                                                                                     this.selected.thongTin.SoCMND

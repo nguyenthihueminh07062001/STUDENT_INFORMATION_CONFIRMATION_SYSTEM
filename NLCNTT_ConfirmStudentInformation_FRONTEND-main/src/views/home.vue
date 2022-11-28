@@ -90,8 +90,7 @@ export default {
                         <img class="d-block w-100" src="../assets/images/truong_kinh_te.jpg" alt="">
                         <p class="text-center description">Trường kinh tế</p>
                     </div>
-                    <!-- <img class="d-block w-100 col-6" src="../assets/images/Truong_nong_nghiep.jpg" alt="">
-                        <img class="d-block w-100 col-6" src="../assets/images/truong_kinh_te.jpg" alt=""> -->
+                   
                 </div>
 
 

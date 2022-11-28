@@ -115,10 +115,6 @@ export default {
           </tbody>
         </table>
         <div class="text-center">
-          <!-- <div v-for="(thongTinDangKy, index) in this.listThongTinDangKy">
-            <p>Tổng số:{{ thongTinDangKy.SoLuong }}</p>
-
-          </div> -->
 
           <h6 class="text-left"> <b> Ghi chú:</b></h6>
           <textarea rows="3" cols="90"
@@ -126,10 +122,6 @@ export default {
 
         </div>
         <div class="text-center">
-          <!-- <a class="btn btn-primary text-light" role="button">
-            <router-link class=" text-light" :to="{ name: 'DangKyXacNhan' }">Đăng ký
-            </router-link>
-          </a> -->
 
           <router-link class=" btn btn-primary text-light" :to="{ name: 'DangKyXacNhan' }">Đăng ký
           </router-link>

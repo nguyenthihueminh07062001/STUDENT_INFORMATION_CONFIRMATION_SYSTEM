@@ -77,12 +77,6 @@ export default {
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div>
-                                <p>Tất cả: {{ this.thongke.all }}</p>
-                                <p>Chờ xác nhận: {{ this.thongke.choXacNhan }}</p>
-                                <p>Đã duyệt: {{ this.thongke.daDuyet }}</p>
-                                <p>Đã hủy: {{ this.thongke.daHuy }}</p>
-                            </div> -->
 
                             <div class="container justify-content-center">
                                 <p></p>
@@ -95,7 +89,7 @@ export default {
                                                 <TH scope="col">Chờ xác nhận</TH>
                                                 <th scope="col">Đã duyệt</th>
                                                 <th scope="col">Đã hủy</th>
-                                
+
                                             </tr>
                                         </thead>
                                         <tbody class="text-center">
@@ -105,16 +99,16 @@ export default {
                                                 <td> {{ this.thongke.choXacNhan }}</td>
                                                 <td> {{ this.thongke.daDuyet }}</td>
                                                 <td> {{ this.thongke.daHuy }}</td>
-                                
+
                                             </tr>
-                                
+
                                         </tbody>
                                     </table>
-                                
+
                                 </div>
 
                             </div>
-                            
+
 
 
                             <div class="row  mt-4">

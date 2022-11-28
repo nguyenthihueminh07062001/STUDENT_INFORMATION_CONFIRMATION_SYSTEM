@@ -7,11 +7,6 @@ import Login from "@/views/login.vue";
 import Notify from "@/views/notify.vue";
 import Intro from "@/views/intro.vue";
 import Forms from "@/views/forms.vue";
-// import THNVQS from "@/views/tamHoanNghiaVuQuanSu.vue";
-// import TVTL from "@/views/tuVanTamLy.vue";
-// import BHYT from "@/views/baoHiemYTe.vue";
-// import DCTT from "@/views/dieuChinhThongTin.vue";
-// import XNVV from "@/views/xacNhanVayVon.vue";
 
 //admin
 import ADMIN from "@/manager/admin.vue";
